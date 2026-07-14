@@ -86,7 +86,7 @@ function Header() {
 
 function Hero() {
   return (
-    <main>
+    <>
       <section className="hero">
         <div className="shell hero__grid">
           <div>
@@ -128,7 +128,7 @@ function Hero() {
             <div className="hero__image-frame">
               <Image
                 src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=85"
-                alt="Plumber installing pipework beneath a kitchen sink"
+                alt="Chrome tapware and exposed plumbing pipework"
                 fill
                 sizes="(max-width: 980px) 100vw, 45vw"
                 priority
@@ -152,7 +152,7 @@ function Hero() {
           ))}
         </div>
       </section>
-    </main>
+    </>
   );
 }
 
@@ -193,7 +193,7 @@ function About() {
         <div className="about__portrait">
           <Image
             src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=85"
-            alt="Tradesperson working carefully on site"
+            alt="Professional drill and trade tools on a worksite"
             fill
             sizes="(max-width: 980px) 100vw, 40vw"
           />
@@ -440,13 +440,15 @@ export default function Home() {
     <>
       <StructuredData />
       <Header />
-      <Hero />
-      <Services />
-      <About />
-      <WhyUs />
-      <Reviews />
-      <Areas />
-      <Contact />
+      <main>
+        <Hero />
+        <Services />
+        <About />
+        <WhyUs />
+        <Reviews />
+        <Areas />
+        <Contact />
+      </main>
       <Footer />
       <a className="mobile-call" href={site.phoneHref}>
         <Phone size={18} fill="currentColor" aria-hidden="true" />

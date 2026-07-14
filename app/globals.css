@@ -448,7 +448,7 @@ a {
 .about {
   position: relative;
   overflow: hidden;
-  background: var(--teal);
+  background: var(--teal-dark);
   color: white;
 }
 
@@ -821,7 +821,7 @@ a {
   gap: 9px;
   border: 2px solid var(--ink);
   border-radius: 999px;
-  background: var(--teal);
+  background: var(--teal-dark);
   box-shadow: 4px 4px 0 var(--ink);
   color: white;
   font-size: 0.88rem;
