@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic Pong</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="hero" aria-labelledby="game-title">
+        <p class="eyebrow">Classic arcade</p>
+        <h1 id="game-title">Pong</h1>
+        <p class="intro">
+          Keep the ball in play, beat the computer, and be the first to score
+          seven points.
+        </p>
+      </section>
+
+      <section class="scoreboard" aria-label="Scoreboard">
+        <div>
+          <span class="label">Player</span>
+          <strong id="player-score">0</strong>
+        </div>
+        <div>
+          <span class="label">Computer</span>
+          <strong id="computer-score">0</strong>
+        </div>
+      </section>
+
+      <div class="game-card">
+        <canvas
+          id="game"
+          width="900"
+          height="560"
+          aria-label="Pong game board"
+        ></canvas>
+        <div id="message" class="message" aria-live="polite">
+          Press Space to start
+        </div>
+      </div>
+
+      <section class="controls" aria-label="Controls">
+        <div>
+          <h2>Controls</h2>
+          <p><kbd>W</kbd> / <kbd>S</kbd> or <kbd>Up</kbd> / <kbd>Down</kbd> move.</p>
+          <p><kbd>Space</kbd> starts, pauses, and resumes.</p>
+          <p><kbd>R</kbd> restarts the match.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
