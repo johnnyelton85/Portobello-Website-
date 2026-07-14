@@ -479,12 +479,31 @@ a {
   overflow: hidden;
   border: 3px solid var(--ink);
   border-radius: 22px;
+  background: var(--orange-soft);
   box-shadow: 12px 12px 0 var(--orange), 16px 16px 0 var(--ink);
   transform: rotate(-2deg);
 }
 
 .about__portrait img {
-  object-fit: cover;
+  z-index: 1;
+  object-fit: contain;
+  object-position: 65% center;
+}
+
+.about__portrait-note {
+  position: absolute;
+  z-index: 2;
+  top: 24px;
+  left: 22px;
+  max-width: 120px;
+  color: var(--orange-dark);
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 0.9;
+  text-transform: uppercase;
+  transform: rotate(-4deg);
 }
 
 .about .eyebrow {

@@ -192,11 +192,16 @@ function About() {
       <div className="shell about__grid">
         <div className="about__portrait">
           <Image
-            src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=85"
-            alt="Professional drill and trade tools on a worksite"
+            src="/portobello-plumber.png"
+            alt="Portobello Plumbing Co illustrated plumber mascot"
             fill
             sizes="(max-width: 980px) 100vw, 40vw"
           />
+          <span className="about__portrait-note" aria-hidden="true">
+            Good people.
+            <br />
+            Good plumbing.
+          </span>
         </div>
         <div>
           <p className="eyebrow">Meet Portobello</p>
