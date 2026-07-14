@@ -227,12 +227,12 @@ function drawCourt() {
 }
 
 function drawPaddle(target) {
-  context.fillStyle = "#f5f7fb";
+  context.fillStyle = "#ff3b3b";
   context.fillRect(target.x, target.y, paddle.width, paddle.height);
 }
 
 function drawBall() {
-  context.fillStyle = "#64f4ac";
+  context.fillStyle = "#ff5fa2";
   context.fillRect(ball.x, ball.y, ball.size, ball.size);
 }
 
