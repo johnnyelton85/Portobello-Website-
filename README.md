@@ -5,16 +5,19 @@ JavaScript.
 
 ## Run locally
 
-Open `index.html` in a browser, or serve the directory with any static file
-server.
-
-For example:
+Install dependencies once:
 
 ```bash
-python3 -m http.server 8000
+npm install
 ```
 
-Then visit <http://localhost:8000>.
+Start the preview server:
+
+```bash
+npm run dev
+```
+
+Then visit <http://localhost:3000>.
 
 ## Controls
 
