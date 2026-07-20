@@ -11,6 +11,44 @@ type ContactPayload = {
 const isSafeText = (value: unknown, max: number) =>
   typeof value === "string" && value.trim().length > 0 && value.length <= max;
 
+async function forwardToFergus(payload: {
+  name: string;
+  phone: string;
+  email: string;
+  message: string;
+}): Promise<void> {
+  const token = process.env.FERGUS_API_TOKEN;
+  if (!token) {
+    console.warn("FERGUS_API_TOKEN not set — enquiry logged locally only.");
+    return;
+  }
+
+  const body = {
+    name: payload.name,
+    email: payload.email || "noreply@portobelloplumbing.co.nz",
+    phoneNumber: payload.phone,
+    description: payload.message,
+    source: "Website",
+    address1: "Not provided",
+    addressCity: "Auckland",
+    addressCountry: "NZ",
+  };
+
+  const response = await fetch("https://api.fergus.com/enquiries", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const text = await response.text().catch(() => "(no body)");
+    throw new Error(`Fergus API ${response.status}: ${text}`);
+  }
+}
+
 export async function POST(request: Request) {
   let payload: ContactPayload;
 
@@ -41,13 +79,26 @@ export async function POST(request: Request) {
     );
   }
 
-  // TODO: Replace this log with an email/CRM integration before launch.
+  const name = payload.name as string;
+  const phone = payload.phone as string;
+  const email = (payload.email as string | undefined) ?? "";
+  const message = payload.message as string;
+
+  // Always log server-side so nothing is silently lost.
   console.info("Contact request received", {
-    name: payload.name,
-    phone: payload.phone,
-    email: payload.email || "Not supplied",
-    message: payload.message,
+    name,
+    phone,
+    email: email || "Not supplied",
+    message,
   });
+
+  try {
+    await forwardToFergus({ name, phone, email, message });
+    console.info("Enquiry forwarded to Fergus.");
+  } catch (err) {
+    // Don't expose Fergus errors to the customer — the form still succeeds.
+    console.error("Failed to forward enquiry to Fergus:", err);
+  }
 
   return NextResponse.json({ ok: true });
 }
