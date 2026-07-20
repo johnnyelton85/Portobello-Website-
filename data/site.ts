@@ -1,6 +1,8 @@
 import {
   Bath,
+  ClipboardCheck,
   Droplets,
+  Filter,
   Flame,
   House,
   Pipette,
@@ -57,10 +59,22 @@ export const services = [
     icon: Pipette,
   },
   {
-    title: "Maintenance",
+    title: "Roofing",
     description:
-      "Proactive plumbing care for homeowners, landlords and small Auckland businesses.",
+      "General roofing repairs, spouting and downpipes — kept sound and clear so rain goes where it should.",
     icon: House,
+  },
+  {
+    title: "Water Treatment",
+    description:
+      "Filtration that tackles Auckland's chlorine and sediment, for water that's cleaner and better-tasting straight from the tap.",
+    icon: Filter,
+  },
+  {
+    title: "Reporting",
+    description:
+      "Pre-purchase plumbing and roof inspections, with a clear report on condition before you commit to buying.",
+    icon: ClipboardCheck,
   },
 ];
 

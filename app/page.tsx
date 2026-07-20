@@ -22,10 +22,25 @@ import {
 } from "@/data/site";
 
 const trustItems = [
-  { label: "Auckland-wide", icon: MapPin },
+  { label: "Licenced and registered", icon: BadgeCheck },
   { label: "Clear communication", icon: ThumbsUp },
   { label: "Quality workmanship", icon: ShieldCheck },
   { label: "Tidy & respectful", icon: Sparkles },
+];
+
+const pricingPlans = [
+  {
+    label: "Call-out",
+    amount: "$130",
+    unit: "+ GST",
+    copy: "Includes the drive to you and the first 30 minutes on site.",
+  },
+  {
+    label: "After that",
+    amount: "$100",
+    unit: "+ GST / hr",
+    copy: "Billed every 15 minutes.",
+  },
 ];
 
 const whyUs = [
@@ -127,8 +142,8 @@ function Hero() {
           <div className="hero__visual">
             <div className="hero__image-frame">
               <Image
-                src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=85"
-                alt="Chrome tapware and exposed plumbing pipework"
+                src="https://images.unsplash.com/photo-1745794565783-913db01a89b9?auto=format&fit=crop&w=1200&q=85"
+                alt="Brass bridge faucet over a white farmhouse sink in a warm contemporary kitchen"
                 fill
                 sizes="(max-width: 980px) 100vw, 45vw"
                 priority
@@ -323,6 +338,39 @@ function Areas() {
   );
 }
 
+function Pricing() {
+  return (
+    <section className="section pricing" id="pricing">
+      <div className="shell">
+        <div className="pricing__head">
+          <div>
+            <p className="eyebrow">Straightforward pricing</p>
+            <h2 className="section-title">No surprises on the invoice.</h2>
+          </div>
+          <p className="section-intro">We keep it simple — two rates.</p>
+        </div>
+        <div className="pricing__grid">
+          {pricingPlans.map(({ label, amount, unit, copy }) => (
+            <article className="pricing-card" key={label}>
+              <span className="pricing-card__label">{label}</span>
+              <span className="pricing-card__amount">
+                {amount}
+                <span className="pricing-card__unit"> {unit}</span>
+              </span>
+              <p>{copy}</p>
+            </article>
+          ))}
+        </div>
+        <p className="pricing__note">
+          Materials and parts are separate, and we&apos;ll always talk those
+          through with you first. For a lot of smaller jobs, the call-out
+          covers the whole visit.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section className="section contact" id="contact">
@@ -405,7 +453,10 @@ function Footer() {
             © {new Date().getFullYear()} Portobello Plumbing Co. All rights
             reserved.
           </span>
-          <span>Built for homes across Tāmaki Makaurau.</span>
+          <div className="footer__legal">
+            <a href="/terms">Terms of Trade</a>
+            <a href="/pre-purchase-terms">Pre-purchase inspection terms</a>
+          </div>
         </div>
       </div>
     </footer>
@@ -452,6 +503,7 @@ export default function Home() {
         <WhyUs />
         <Reviews />
         <Areas />
+        <Pricing />
         <Contact />
       </main>
       <Footer />
