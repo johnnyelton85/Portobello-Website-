@@ -78,24 +78,23 @@ export const services = [
   },
 ];
 
-// Replace these placeholder reviews with verified customer feedback before launch.
 export const reviews = [
   {
     quote:
-      "Friendly, clear and incredibly tidy. We knew what was happening at every step and the job was finished beautifully.",
-    name: "Sample customer",
-    suburb: "Grey Lynn",
+      "Johnny was great to deal with. He repaired a couple of roof leaks around our chimney flue and above the kitchen, installed a new toilet, and fixed the low pressure on our shower. He turned up on time, was professional throughout, took care while working in the house, and managed to get everything sorted in one visit. Great workmanship and I'd happily recommend Portobello Plumbing Co.",
+    name: "Jude",
+    suburb: "Mt Albert",
   },
   {
     quote:
-      "Quick to respond, arrived when promised, and solved the problem without any fuss. Exactly what you want from a plumber.",
-    name: "Sample customer",
-    suburb: "Mount Eden",
+      "We recently had Johnny replace our kitchen tap and install a water filtration system. The whole process was straightforward from start to finish. He was friendly, knowledgeable, and happy to answer a few questions along the way. The installation looks tidy and everything works perfectly. Thanks Johnny!",
+    name: "Nick",
+    suburb: "Sandringham",
   },
   {
     quote:
       "The communication was excellent and the workmanship was top notch. We would happily call Portobello again.",
-    name: "Sample customer",
+    name: "Matt",
     suburb: "Point Chevalier",
   },
 ];

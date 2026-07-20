@@ -121,7 +121,7 @@ function Hero() {
                 Call {site.phoneDisplay}
               </a>
               <a className="button button--light" href="#contact">
-                Request a callback
+                Request a quote
               </a>
             </div>
             <ul className="hero__trust">
@@ -322,7 +322,7 @@ function Areas() {
           <p className="eyebrow">Where we work</p>
           <h2 className="section-title">Auckland is our patch.</h2>
           <p className="section-intro">
-            Based in Auckland and working across the region. Not sure if
+            Based in central Auckland and working across the region. Not sure if
             you&apos;re in range? Give us a ring and we&apos;ll let you know.
           </p>
         </div>
@@ -376,11 +376,13 @@ function Contact() {
     <section className="section contact" id="contact">
       <div className="shell contact__grid">
         <div>
-          <p className="eyebrow">Get in touch</p>
+          <p className="eyebrow">Get in touch or a free quote</p>
           <h2 className="section-title">Tell us what needs sorting.</h2>
           <p className="section-intro">
-            Send through a few details and we&apos;ll get back to you. If
-            it&apos;s urgent, calling is always best.
+            Tell us a bit about the job and feel free to snap a few photos if
+            you&apos;d like. We&apos;ll get back to you with a quote or, if you
+            prefer, can schedule a time to come and visit. A quick call is
+            always the fastest way to reach us if that&apos;s preferred.
           </p>
           <div className="contact__details">
             <a className="contact__detail" href={site.phoneHref}>
