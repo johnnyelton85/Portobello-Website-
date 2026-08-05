@@ -54,7 +54,7 @@ const whyUs = [
   },
   {
     title: "Built to last",
-    copy: "Practical solutions and considered workmanship. Not a short-term patch-up.",
+    copy: "Practical solutions and considered workmanship, not a short-term patch-up.",
   },
   {
     title: "Here when promised",
