@@ -127,7 +127,7 @@ function Hero() {
             <ul className="hero__trust">
               <li>
                 <Check size={18} strokeWidth={3} aria-hidden="true" />
-                Auckland-wide service
+                Locally owned & operated
               </li>
               <li>
                 <Check size={18} strokeWidth={3} aria-hidden="true" />
@@ -446,7 +446,7 @@ function Footer() {
             <div className="footer__links">
               <a href={site.phoneHref}>{site.phoneDisplay}</a>
               <a href={site.emailHref}>{site.email}</a>
-              <span>Auckland-wide service</span>
+              <span>Central & West Auckland</span>
             </div>
           </div>
         </div>
