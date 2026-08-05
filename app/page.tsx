@@ -216,17 +216,17 @@ function About() {
         <div>
           <p className="eyebrow">Meet your plumber</p>
           <h2 className="section-title">
-            Johnny. Qualified, local, gets it done right.
+            Johnny. Licensed, local and easy to deal with.
           </h2>
           <p className="about__copy">
-            Portobello Plumbing is Johnny. New Zealand qualified, Auckland
-            based, and genuinely focused on the details. Good communication
-            and careful workmanship come as standard.
+            Portobello Plumbing is run by Johnny, a New Zealand registered
+            plumber who takes the time to get things right. Whether it&apos;s
+            a dripping tap or a full bathroom fit-out, the same care goes
+            into every job.
           </p>
           <p className="about__copy">
-            Straight answers, considered workmanship and a tidy site when the
-            job&apos;s done. The kind of service you&apos;d expect, but
-            don&apos;t always get.
+            Clear communication, tidy workmanship, no shortcuts. The kind of
+            service you&apos;d expect, but don&apos;t always get.
           </p>
           <ul className="about__checks">
             <li>
