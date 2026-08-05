@@ -220,9 +220,9 @@ function About() {
           </h2>
           <p className="about__copy">
             Portobello Plumbing is run by Johnny, a New Zealand registered
-            plumber who takes the time to get things right. Whether it&apos;s
-            a dripping tap or a full bathroom fit-out, the same care goes
-            into every job.
+            plumber with the experience and know-how to get things right
+            first time. Whether it&apos;s a dripping tap or a full bathroom
+            fit-out, the same care goes into every job.
           </p>
           <p className="about__copy">
             Clear communication, tidy workmanship, no shortcuts. The kind of
