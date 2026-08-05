@@ -88,13 +88,13 @@ export const reviews = [
   {
     quote:
       "We recently had Johnny replace our kitchen tap and install a water filtration system. The whole process was straightforward from start to finish. He was friendly, knowledgeable, and happy to answer a few questions along the way. The installation looks tidy and everything works perfectly. Thanks Johnny!",
-    name: "Nick",
+    name: "Nick K",
     suburb: "Sandringham",
   },
   {
     quote:
       "Really pleased with the work Portobello Plumbing did. Johnny did an excellent job installing our household water filtration system, and at a competitive price. He was very knowledgeable giving us regular updates and recommendations from first consultation to the final installation. We wouldn't hesitate to use Portobello for any future plumbing work.",
-    name: "Matt",
+    name: "Matt B",
     suburb: "Pt Chevalier",
   },
 ];
