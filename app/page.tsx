@@ -150,9 +150,9 @@ function Hero() {
               />
             </div>
             <div className="hero__sticker" aria-hidden="true">
-              Auckland
+              Central
               <br />
-              wide
+              & West
             </div>
           </div>
         </div>
@@ -318,10 +318,10 @@ function Areas() {
       <div className="shell areas__grid">
         <div>
           <p className="eyebrow">Where we work</p>
-          <h2 className="section-title">Auckland is our patch.</h2>
+          <h2 className="section-title">Central & West Auckland.</h2>
           <p className="section-intro">
-            Based in central Auckland and working across the region. Not sure if
-            you&apos;re in range? Give us a ring and we&apos;ll let you know.
+            Based locally and covering the central and western suburbs. Not sure
+            if you&apos;re in range? Give us a ring and we&apos;ll let you know.
           </p>
         </div>
         <div className="area-pills" aria-label="Service areas">
