@@ -416,8 +416,7 @@ a {
   transform: translate(-3px, -3px);
 }
 
-.service-card:nth-child(2),
-.service-card:nth-child(5) {
+.service-card:nth-child(even) {
   background: var(--orange-soft);
 }
 
