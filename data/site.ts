@@ -100,10 +100,22 @@ export const reviews = [
 ];
 
 export const serviceAreas = [
-  "Central Auckland",
-  "West Auckland",
-  "North Shore",
-  "East Auckland",
-  "South Auckland",
-  "Auckland-wide",
+  "Parnell",
+  "Remuera",
+  "Ponsonby",
+  "Greenlane",
+  "Grey Lynn",
+  "Henderson",
+  "Newmarket",
+  "Mount Eden",
+  "Morningside",
+  "Sandringham",
+  "Mount Albert",
+  "Mount Roskill",
+  "New Lynn",
+  "Onehunga",
+  "Point Chevalier",
+  "Auckland CBD",
+  "Western Springs",
+  "Newton",
 ];
