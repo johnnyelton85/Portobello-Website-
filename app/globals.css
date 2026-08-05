@@ -677,9 +677,8 @@ a {
 
 .area-pills {
   display: grid;
-  grid-template-columns: repeat(3, max-content);
-  justify-content: end;
-  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 .area-pill {
