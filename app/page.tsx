@@ -219,29 +219,34 @@ function About() {
           </span>
         </div>
         <div>
-          <p className="eyebrow">Meet Portobello</p>
+          <p className="eyebrow">Meet your plumber Johnny</p>
           <h2 className="section-title">
-            Plumbing with a bit more personality.
+            New Zealand qualified. Detail focused.
           </h2>
           <p className="about__copy">
-            Portobello Plumbing Co is a proudly local Auckland plumbing outfit.
-            We believe a good tradie should be easy to reach, easy to understand
-            and genuinely care about the finished job. That means listening
-            properly, giving you straight answers and treating your place like
-            our own.
+            Portobello Plumbing Co is run by Johnny, a proudly local Auckland
+            plumber who is New Zealand qualified and genuinely cares about the
+            finished job. You get a tradie who is easy to reach, easy to
+            understand and focused on the details that make plumbing work
+            properly.
+          </p>
+          <p className="about__copy">
+            That means listening properly, giving you straight answers and
+            treating your place like our own — tidy work, practical solutions
+            and clear communication from first call to clean-up.
           </p>
           <ul className="about__checks">
+            <li>
+              <BadgeCheck size={21} aria-hidden="true" /> New Zealand qualified
+            </li>
             <li>
               <BadgeCheck size={21} aria-hidden="true" /> Honest advice
             </li>
             <li>
-              <BadgeCheck size={21} aria-hidden="true" /> Practical solutions
+              <BadgeCheck size={21} aria-hidden="true" /> Attention to detail
             </li>
             <li>
-              <BadgeCheck size={21} aria-hidden="true" /> Friendly service
-            </li>
-            <li>
-              <BadgeCheck size={21} aria-hidden="true" /> Auckland know-how
+              <BadgeCheck size={21} aria-hidden="true" /> Tidy, respectful work
             </li>
           </ul>
           <a className="button button--light" href={site.phoneHref}>
