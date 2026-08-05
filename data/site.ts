@@ -1,6 +1,8 @@
 import {
   Bath,
+  ClipboardCheck,
   Droplets,
+  Filter,
   Flame,
   House,
   Pipette,
@@ -29,7 +31,7 @@ export const services = [
   {
     title: "General Plumbing",
     description:
-      "Leaking taps, toilets, burst pipes and everyday repairs — sorted properly, without the runaround.",
+      "Leaking taps, toilets, burst pipes and everyday repairs, all sorted properly without the runaround.",
     icon: Wrench,
   },
   {
@@ -57,40 +59,63 @@ export const services = [
     icon: Pipette,
   },
   {
-    title: "Maintenance",
+    title: "Roofing",
     description:
-      "Proactive plumbing care for homeowners, landlords and small Auckland businesses.",
+      "General roofing repairs, spouting and downpipes, kept sound and clear so rain goes where it should.",
     icon: House,
+  },
+  {
+    title: "Water Treatment",
+    description:
+      "Filtration that tackles Auckland's chlorine and sediment, for water that's cleaner and better-tasting straight from the tap.",
+    icon: Filter,
+  },
+  {
+    title: "Reporting",
+    description:
+      "Pre-purchase plumbing and roof inspections, with a clear report on condition before you commit to buying.",
+    icon: ClipboardCheck,
   },
 ];
 
-// Replace these placeholder reviews with verified customer feedback before launch.
 export const reviews = [
   {
     quote:
-      "Friendly, clear and incredibly tidy. We knew what was happening at every step and the job was finished beautifully.",
-    name: "Sample customer",
-    suburb: "Grey Lynn",
+      "Johnny did excellent work at our house and was a great communicator throughout. Highly recommend him for anyone needing a reliable, helpful plumber.",
+    name: "Wade T",
+    suburb: "Mt Albert",
   },
   {
     quote:
-      "Quick to respond, arrived when promised, and solved the problem without any fuss. Exactly what you want from a plumber.",
-    name: "Sample customer",
-    suburb: "Mount Eden",
+      "We recently had Johnny replace our kitchen tap and install a water filtration system. The whole process was straightforward from start to finish. He was friendly, knowledgeable, and happy to answer a few questions along the way. The installation looks tidy and everything works perfectly. Thanks Johnny!",
+    name: "Nick",
+    suburb: "Sandringham",
   },
   {
     quote:
-      "The communication was excellent and the workmanship was top notch. We would happily call Portobello again.",
-    name: "Sample customer",
-    suburb: "Point Chevalier",
+      "Really pleased with the work Portobello Plumbing did. Johnny did an excellent job installing our household water filtration system, and at a competitive price. He was very knowledgeable giving us regular updates and recommendations from first consultation to the final installation. We wouldn't hesitate to use Portobello for any future plumbing work.",
+    name: "Matt",
+    suburb: "Pt Chevalier",
   },
 ];
 
 export const serviceAreas = [
-  "Central Auckland",
-  "West Auckland",
-  "North Shore",
-  "East Auckland",
-  "South Auckland",
-  "Auckland-wide",
+  "Parnell",
+  "Remuera",
+  "Ponsonby",
+  "Greenlane",
+  "Grey Lynn",
+  "Henderson",
+  "Newmarket",
+  "Mount Eden",
+  "Morningside",
+  "Sandringham",
+  "Mount Albert",
+  "Mount Roskill",
+  "New Lynn",
+  "Onehunga",
+  "Point Chevalier",
+  "Auckland CBD",
+  "Western Springs",
+  "Newton",
 ];

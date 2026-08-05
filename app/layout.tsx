@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Portobello Plumbing Co",
-    description: "Great plumbing. No dramas. Auckland-wide.",
+    description: "Great plumbing. No dramas. Locally owned.",
     images: ["/portobello-logo.png"],
   },
   icons: {

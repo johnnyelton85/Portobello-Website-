@@ -22,10 +22,25 @@ import {
 } from "@/data/site";
 
 const trustItems = [
-  { label: "Auckland-wide", icon: MapPin },
+  { label: "Licenced and registered", icon: BadgeCheck },
   { label: "Clear communication", icon: ThumbsUp },
   { label: "Quality workmanship", icon: ShieldCheck },
   { label: "Tidy & respectful", icon: Sparkles },
+];
+
+const pricingPlans = [
+  {
+    label: "Call-out",
+    amount: "$130",
+    unit: "+ GST",
+    copy: "Includes the drive to you and the first 30 minutes on site.",
+  },
+  {
+    label: "After that",
+    amount: "$100",
+    unit: "+ GST / hr",
+    copy: "Billed every 15 minutes.",
+  },
 ];
 
 const whyUs = [
@@ -39,7 +54,7 @@ const whyUs = [
   },
   {
     title: "Built to last",
-    copy: "Practical solutions and considered workmanship — not a short-term patch-up.",
+    copy: "Practical solutions and considered workmanship, not a short-term patch-up.",
   },
   {
     title: "Here when promised",
@@ -106,13 +121,13 @@ function Hero() {
                 Call {site.phoneDisplay}
               </a>
               <a className="button button--light" href="#contact">
-                Request a callback
+                Request a quote
               </a>
             </div>
             <ul className="hero__trust">
               <li>
                 <Check size={18} strokeWidth={3} aria-hidden="true" />
-                Auckland-wide service
+                Locally owned & operated
               </li>
               <li>
                 <Check size={18} strokeWidth={3} aria-hidden="true" />
@@ -127,8 +142,8 @@ function Hero() {
           <div className="hero__visual">
             <div className="hero__image-frame">
               <Image
-                src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=85"
-                alt="Chrome tapware and exposed plumbing pipework"
+                src="https://images.unsplash.com/photo-1745794565783-913db01a89b9?auto=format&fit=crop&w=1200&q=85"
+                alt="Brass bridge faucet over a white farmhouse sink in a warm contemporary kitchen"
                 fill
                 sizes="(max-width: 980px) 100vw, 45vw"
                 priority
@@ -192,41 +207,39 @@ function About() {
       <div className="shell about__grid">
         <div className="about__portrait">
           <Image
-            src="/portobello-plumber.png"
-            alt="Portobello Plumbing Co illustrated plumber mascot"
+            src="/johnny-profile-close.jpg"
+            alt="Johnny from Portobello Plumbing Co standing beside a van"
             fill
             sizes="(max-width: 980px) 100vw, 40vw"
           />
-          <span className="about__portrait-note" aria-hidden="true">
-            Good people.
-            <br />
-            Good plumbing.
-          </span>
         </div>
         <div>
-          <p className="eyebrow">Meet Portobello</p>
+          <p className="eyebrow">Meet your plumber</p>
           <h2 className="section-title">
-            Plumbing with a bit more personality.
+            Johnny. Licensed, local and easy to deal with.
           </h2>
           <p className="about__copy">
-            Portobello Plumbing Co is a proudly local Auckland plumbing outfit.
-            We believe a good tradie should be easy to reach, easy to understand
-            and genuinely care about the finished job. That means listening
-            properly, giving you straight answers and treating your place like
-            our own.
+            Portobello Plumbing is run by Johnny, a New Zealand registered
+            plumber with the experience and know-how to get things right
+            first time. Whether it&apos;s a dripping tap or a full bathroom
+            fit-out, the same care goes into every job.
+          </p>
+          <p className="about__copy">
+            Clear communication, tidy workmanship, no shortcuts. The kind of
+            service you&apos;d expect, but don&apos;t always get.
           </p>
           <ul className="about__checks">
             <li>
-              <BadgeCheck size={21} aria-hidden="true" /> Honest advice
+              <BadgeCheck size={21} aria-hidden="true" /> NZ qualified plumber
             </li>
             <li>
-              <BadgeCheck size={21} aria-hidden="true" /> Practical solutions
+              <BadgeCheck size={21} aria-hidden="true" /> Clear communication
             </li>
             <li>
-              <BadgeCheck size={21} aria-hidden="true" /> Friendly service
+              <BadgeCheck size={21} aria-hidden="true" /> Attention to detail
             </li>
             <li>
-              <BadgeCheck size={21} aria-hidden="true" /> Auckland know-how
+              <BadgeCheck size={21} aria-hidden="true" /> Tidy, careful work
             </li>
           </ul>
           <a className="button button--light" href={site.phoneHref}>
@@ -307,7 +320,7 @@ function Areas() {
           <p className="eyebrow">Where we work</p>
           <h2 className="section-title">Auckland is our patch.</h2>
           <p className="section-intro">
-            Based in Auckland and working across the region. Not sure if
+            Based in central Auckland and working across the region. Not sure if
             you&apos;re in range? Give us a ring and we&apos;ll let you know.
           </p>
         </div>
@@ -323,16 +336,51 @@ function Areas() {
   );
 }
 
+function Pricing() {
+  return (
+    <section className="section pricing" id="pricing">
+      <div className="shell">
+        <div className="pricing__head">
+          <div>
+            <p className="eyebrow">Straightforward pricing</p>
+            <h2 className="section-title">No surprises on the invoice.</h2>
+          </div>
+          <p className="section-intro">We keep it simple. Two rates.</p>
+        </div>
+        <div className="pricing__grid">
+          {pricingPlans.map(({ label, amount, unit, copy }) => (
+            <article className="pricing-card" key={label}>
+              <span className="pricing-card__label">{label}</span>
+              <span className="pricing-card__amount">
+                {amount}
+                <span className="pricing-card__unit"> {unit}</span>
+              </span>
+              <p>{copy}</p>
+            </article>
+          ))}
+        </div>
+        <p className="pricing__note">
+          Materials and parts are separate, and we&apos;ll always talk those
+          through with you first. For a lot of smaller jobs, the call-out
+          covers the whole visit.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section className="section contact" id="contact">
       <div className="shell contact__grid">
         <div>
-          <p className="eyebrow">Get in touch</p>
+          <p className="eyebrow">Get in touch or a free quote</p>
           <h2 className="section-title">Tell us what needs sorting.</h2>
           <p className="section-intro">
-            Send through a few details and we&apos;ll get back to you. If
-            it&apos;s urgent, calling is always best.
+            Tell us a bit about the job and feel free to snap a few photos if
+            you&apos;d like. We&apos;ll get back to you with a quote or, if you
+            prefer, can schedule a time to come and visit. A quick call is
+            always the fastest way to reach us if that&apos;s preferred.
           </p>
           <div className="contact__details">
             <a className="contact__detail" href={site.phoneHref}>
@@ -396,7 +444,7 @@ function Footer() {
             <div className="footer__links">
               <a href={site.phoneHref}>{site.phoneDisplay}</a>
               <a href={site.emailHref}>{site.email}</a>
-              <span>Auckland-wide service</span>
+              <span>Central & West Auckland</span>
             </div>
           </div>
         </div>
@@ -405,7 +453,10 @@ function Footer() {
             © {new Date().getFullYear()} Portobello Plumbing Co. All rights
             reserved.
           </span>
-          <span>Built for homes across Tāmaki Makaurau.</span>
+          <div className="footer__legal">
+            <a href="/terms">Terms of Trade</a>
+            <a href="/pre-purchase-terms">Pre-purchase inspection terms</a>
+          </div>
         </div>
       </div>
     </footer>
@@ -452,6 +503,7 @@ export default function Home() {
         <WhyUs />
         <Reviews />
         <Areas />
+        <Pricing />
         <Contact />
       </main>
       <Footer />
