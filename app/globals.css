@@ -667,12 +667,18 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 72px;
+  gap: 56px;
+  padding: 54px;
+  border: 3px solid var(--ink);
+  border-radius: 36px;
+  background: var(--cream);
+  box-shadow: 12px 12px 0 var(--ink);
 }
 
 .area-pills {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 12px;
 }
 
@@ -680,7 +686,8 @@ a {
   border: 2px solid var(--ink);
   border-radius: 999px;
   padding: 11px 18px;
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--paper);
+  box-shadow: 4px 4px 0 var(--teal);
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.03em;
@@ -1204,6 +1211,10 @@ a {
   .why__grid {
     gap: 44px;
   }
+
+  .area-pills {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 650px) {
@@ -1339,6 +1350,13 @@ a {
 
   .about__checks {
     grid-template-columns: 1fr;
+  }
+
+  .areas__grid {
+    gap: 34px;
+    padding: 30px 22px;
+    border-radius: 26px;
+    box-shadow: 8px 8px 0 var(--ink);
   }
 
   .review-card:nth-child(2) {
