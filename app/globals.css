@@ -676,21 +676,22 @@ a {
 }
 
 .area-pills {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
 }
 
 .area-pill {
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--ink);
   border-radius: 999px;
-  padding: 8px 12px;
+  padding: 5px 10px;
   background: var(--paper);
-  box-shadow: 4px 4px 0 var(--teal);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  line-height: 1.1;
+  box-shadow: 2px 2px 0 var(--teal);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
   white-space: nowrap;
   text-transform: uppercase;
 }
@@ -1213,9 +1214,6 @@ a {
     gap: 44px;
   }
 
-  .area-pills {
-    justify-content: start;
-  }
 }
 
 @media (max-width: 650px) {
@@ -1358,10 +1356,6 @@ a {
     padding: 30px 22px;
     border-radius: 26px;
     box-shadow: 8px 8px 0 var(--ink);
-  }
-
-  .area-pills {
-    grid-template-columns: 1fr;
   }
 
   .review-card:nth-child(2) {
