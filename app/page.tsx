@@ -216,14 +216,12 @@ function About() {
         <div>
           <p className="eyebrow">Meet your plumber</p>
           <h2 className="section-title">
-            Johnny. Local, qualified, easy to deal with.
+            Johnny. Qualified, local, gets it done right.
           </h2>
           <p className="about__copy">
-            Portobello Plumbing Co is run by Johnny, a New Zealand qualified
-            plumber based in Auckland. Good communication and attention to
-            detail are what set the job apart, and that&apos;s where the focus
-            goes. You get someone who listens properly, keeps you in the loop
-            and takes care with the finish.
+            Portobello Plumbing is Johnny. New Zealand qualified, Auckland
+            based, and genuinely focused on the details. Good communication
+            and careful workmanship come as standard.
           </p>
           <p className="about__copy">
             Straight answers, considered workmanship and a tidy site when the
