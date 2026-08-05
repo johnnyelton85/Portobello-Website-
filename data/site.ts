@@ -119,4 +119,7 @@ export const serviceAreas = [
   "Western Springs",
   "Newton",
   "Avondale",
+  "Westmere",
+  "Waterview",
+  "Owairaka",
 ];
