@@ -118,4 +118,5 @@ export const serviceAreas = [
   "Auckland CBD",
   "Western Springs",
   "Newton",
+  "Avondale",
 ];
