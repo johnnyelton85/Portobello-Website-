@@ -216,32 +216,32 @@ function About() {
         <div>
           <p className="eyebrow">Meet your plumber</p>
           <h2 className="section-title">
-            Hi, I&apos;m Johnny.
+            Johnny. Local, qualified, easy to deal with.
           </h2>
           <p className="about__copy">
-            I started Portobello Plumbing Co because I believe Auckland
-            deserves a plumber who actually shows up, does the job properly
-            and leaves things tidy. I&apos;m New Zealand qualified, and I take
-            real pride in the quality of my work — not just getting it done,
-            but getting it done right.
+            Portobello Plumbing Co is run by Johnny — a New Zealand qualified
+            plumber based in Auckland. Good communication and attention to
+            detail are what set the job apart, and that&apos;s where the focus
+            goes. You get someone who listens properly, keeps you in the loop
+            and takes care with the finish.
           </p>
           <p className="about__copy">
-            I&apos;ll always give you a straight answer, keep you in the loop
-            and treat your home with respect. No jargon, no surprises on the
-            invoice — just reliable plumbing you can count on.
+            Straight answers, considered workmanship and a tidy site when the
+            job&apos;s done. The kind of service you&apos;d expect, but
+            don&apos;t always get.
           </p>
           <ul className="about__checks">
             <li>
-              <BadgeCheck size={21} aria-hidden="true" /> New Zealand qualified
+              <BadgeCheck size={21} aria-hidden="true" /> NZ qualified plumber
             </li>
             <li>
-              <BadgeCheck size={21} aria-hidden="true" /> Honest, upfront pricing
+              <BadgeCheck size={21} aria-hidden="true" /> Clear communication
             </li>
             <li>
               <BadgeCheck size={21} aria-hidden="true" /> Attention to detail
             </li>
             <li>
-              <BadgeCheck size={21} aria-hidden="true" /> Tidy, respectful work
+              <BadgeCheck size={21} aria-hidden="true" /> Tidy, careful work
             </li>
           </ul>
           <a className="button button--light" href={site.phoneHref}>
