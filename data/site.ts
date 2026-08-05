@@ -95,7 +95,7 @@ export const reviews = [
     quote:
       "Really pleased with the work Portobello Plumbing did. Johnny did an excellent job installing our household water filtration system, and at a competitive price. He was very knowledgeable giving us regular updates and recommendations from first consultation to the final installation. We wouldn't hesitate to use Portobello for any future plumbing work.",
     name: "Matt",
-    suburb: "Mt Albert",
+    suburb: "Pt Chevalier",
   },
 ];
 
