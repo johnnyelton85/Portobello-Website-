@@ -214,28 +214,28 @@ function About() {
           />
         </div>
         <div>
-          <p className="eyebrow">Meet your plumber Johnny</p>
+          <p className="eyebrow">Meet your plumber</p>
           <h2 className="section-title">
-            New Zealand qualified. Detail focused.
+            Hi, I&apos;m Johnny.
           </h2>
           <p className="about__copy">
-            Portobello Plumbing Co is run by Johnny, a proudly local Auckland
-            plumber who is New Zealand qualified and genuinely cares about the
-            finished job. You get a tradie who is easy to reach, easy to
-            understand and focused on the details that make plumbing work
-            properly.
+            I started Portobello Plumbing Co because I believe Auckland
+            deserves a plumber who actually shows up, does the job properly
+            and leaves things tidy. I&apos;m New Zealand qualified, and I take
+            real pride in the quality of my work — not just getting it done,
+            but getting it done right.
           </p>
           <p className="about__copy">
-            That means listening properly, giving you straight answers and
-            treating your place like our own — tidy work, practical solutions
-            and clear communication from first call to clean-up.
+            I&apos;ll always give you a straight answer, keep you in the loop
+            and treat your home with respect. No jargon, no surprises on the
+            invoice — just reliable plumbing you can count on.
           </p>
           <ul className="about__checks">
             <li>
               <BadgeCheck size={21} aria-hidden="true" /> New Zealand qualified
             </li>
             <li>
-              <BadgeCheck size={21} aria-hidden="true" /> Honest advice
+              <BadgeCheck size={21} aria-hidden="true" /> Honest, upfront pricing
             </li>
             <li>
               <BadgeCheck size={21} aria-hidden="true" /> Attention to detail
