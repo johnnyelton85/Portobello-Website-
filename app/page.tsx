@@ -207,7 +207,7 @@ function About() {
       <div className="shell about__grid">
         <div className="about__portrait">
           <Image
-            src="/johnny-profile.jpg"
+            src="/johnny-profile-close.jpg"
             alt="Johnny from Portobello Plumbing Co standing beside a van"
             fill
             sizes="(max-width: 980px) 100vw, 40vw"
