@@ -81,8 +81,8 @@ export const services = [
 export const reviews = [
   {
     quote:
-      "Johnny was great to deal with. He repaired a couple of roof leaks around our chimney flue and above the kitchen, installed a new toilet, and fixed the low pressure on our shower. He turned up on time, was professional throughout, took care while working in the house, and managed to get everything sorted in one visit. Great workmanship and I'd happily recommend Portobello Plumbing Co.",
-    name: "Jude",
+      "Johnny did excellent work at our house and was a great communicator throughout. Highly recommend him for anyone needing a reliable, helpful plumber.",
+    name: "Wade T",
     suburb: "Mt Albert",
   },
   {
