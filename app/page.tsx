@@ -54,7 +54,7 @@ const whyUs = [
   },
   {
     title: "Built to last",
-    copy: "Practical solutions and considered workmanship — not a short-term patch-up.",
+    copy: "Practical solutions and considered workmanship. Not a short-term patch-up.",
   },
   {
     title: "Here when promised",
@@ -219,7 +219,7 @@ function About() {
             Johnny. Local, qualified, easy to deal with.
           </h2>
           <p className="about__copy">
-            Portobello Plumbing Co is run by Johnny — a New Zealand qualified
+            Portobello Plumbing Co is run by Johnny, a New Zealand qualified
             plumber based in Auckland. Good communication and attention to
             detail are what set the job apart, and that&apos;s where the focus
             goes. You get someone who listens properly, keeps you in the loop
@@ -347,7 +347,7 @@ function Pricing() {
             <p className="eyebrow">Straightforward pricing</p>
             <h2 className="section-title">No surprises on the invoice.</h2>
           </div>
-          <p className="section-intro">We keep it simple — two rates.</p>
+          <p className="section-intro">We keep it simple. Two rates.</p>
         </div>
         <div className="pricing__grid">
           {pricingPlans.map(({ label, amount, unit, copy }) => (

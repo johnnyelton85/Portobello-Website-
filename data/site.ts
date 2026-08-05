@@ -31,7 +31,7 @@ export const services = [
   {
     title: "General Plumbing",
     description:
-      "Leaking taps, toilets, burst pipes and everyday repairs — sorted properly, without the runaround.",
+      "Leaking taps, toilets, burst pipes and everyday repairs. Sorted properly, without the runaround.",
     icon: Wrench,
   },
   {
@@ -61,7 +61,7 @@ export const services = [
   {
     title: "Roofing",
     description:
-      "General roofing repairs, spouting and downpipes — kept sound and clear so rain goes where it should.",
+      "General roofing repairs, spouting and downpipes. Kept sound and clear so rain goes where it should.",
     icon: House,
   },
   {
