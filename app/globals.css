@@ -488,8 +488,8 @@ a {
 
 .about__portrait img {
   z-index: 1;
-  object-fit: contain;
-  object-position: 65% center;
+  object-fit: cover;
+  object-position: center 28%;
 }
 
 .about__portrait-note {

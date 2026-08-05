@@ -207,16 +207,11 @@ function About() {
       <div className="shell about__grid">
         <div className="about__portrait">
           <Image
-            src="/portobello-plumber.png"
-            alt="Portobello Plumbing Co illustrated plumber mascot"
+            src="/johnny-profile.jpg"
+            alt="Johnny from Portobello Plumbing Co standing beside a van"
             fill
             sizes="(max-width: 980px) 100vw, 40vw"
           />
-          <span className="about__portrait-note" aria-hidden="true">
-            Good people.
-            <br />
-            Good plumbing.
-          </span>
         </div>
         <div>
           <p className="eyebrow">Meet your plumber Johnny</p>
