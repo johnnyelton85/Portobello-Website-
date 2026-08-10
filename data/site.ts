@@ -73,7 +73,7 @@ export const services = [
   {
     title: "Reporting",
     description:
-      "Pre-purchase plumbing and roof inspections, with a clear report on condition before you commit to buying.",
+      "Pre-purchase plumbing inspections, with a clear report on condition before you commit to buying.",
     icon: ClipboardCheck,
   },
 ];
