@@ -1203,6 +1203,18 @@ main {
   gap: 8px 18px;
 }
 
+.footer__pages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
 .footer__legal a,
 .legal-footer a {
   text-decoration: underline;
