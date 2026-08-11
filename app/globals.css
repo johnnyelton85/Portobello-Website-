@@ -1085,8 +1085,12 @@ main {
   padding: 18px 24px;
   border: 2px solid var(--ink);
   border-radius: 18px;
-  background: var(--orange-soft);
+  background: var(--cream);
   box-shadow: 4px 4px 0 var(--teal);
+}
+
+.lp-service:nth-child(even) {
+  background: var(--orange-soft);
 }
 
 .lp-service h3 {
