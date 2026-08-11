@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function BlockedDrainsPage() {
   return (
     <LandingPage
-      eyebrow="Blocked drain specialists"
+      eyebrow="Blocked drains, Auckland"
       headline={`Blocked drain?\nWe'll sort it.`}
       subheadline="Fast response, practical solutions and a plumber who'll tell you straight what's going on. Covering Central and West Auckland."
       intro="A blocked drain can go from minor inconvenience to serious problem quickly. We carry the right equipment to diagnose, clear and advise — so you're not left guessing, and it doesn't come back."
