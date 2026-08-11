@@ -369,6 +369,55 @@ function Pricing() {
   );
 }
 
+const faqs = [
+  {
+    question: "What areas do you cover?",
+    answer:
+      "We cover Central and West Auckland including Grey Lynn, Ponsonby, Mt Eden, Mt Albert, Sandringham, Avondale, Henderson, New Lynn, and surrounding suburbs.",
+  },
+  {
+    question: "Do you offer free quotes?",
+    answer:
+      "Yes, we provide free quotes for most plumbing work. Call us on 027 549 9090 or use the contact form with details of the job.",
+  },
+  {
+    question: "What are your call-out fees?",
+    answer:
+      "$130 + GST covers travel and the first 30 minutes on site. After that, it's $100 + GST per hour. Materials are quoted separately.",
+  },
+  {
+    question: "Are you a licensed plumber?",
+    answer:
+      "Yes, Johnny is a fully qualified, New Zealand registered and licensed plumber with insurance.",
+  },
+  {
+    question: "Do you handle emergencies?",
+    answer:
+      "We handle urgent jobs during business hours (Mon–Fri 7:30am–5pm). Call 027 549 9090 and we'll do our best to help quickly.",
+  },
+];
+
+function FAQ() {
+  return (
+    <section className="section faq" id="faq">
+      <div className="shell">
+        <div className="faq__head">
+          <p className="eyebrow">Common questions</p>
+          <h2 className="section-title">Good to know.</h2>
+        </div>
+        <div className="faq__grid">
+          {faqs.map((faq) => (
+            <details className="faq__item" key={faq.question}>
+              <summary className="faq__question">{faq.question}</summary>
+              <p className="faq__answer">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section className="section contact" id="contact">
@@ -405,8 +454,20 @@ function Contact() {
               <span>
                 <Clock3 size={19} aria-hidden="true" />
               </span>
-              Hours by arrangement
+              Mon–Fri: 7:30am – 5:00pm
             </div>
+          </div>
+          <div className="contact__map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6385.868963427421!2d174.71165567614746!3d-36.88560478577754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d46c1f3d3f8ab%3A0x500ef6143a2d600!2sMt%20Albert%2C%20Auckland!5e0!3m2!1sen!2snz!4v1691712000000!5m2!1sen!2snz"
+              width="100%"
+              height="200"
+              style={{ border: 0, borderRadius: "8px", marginTop: "24px" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Portobello Plumbing - Mt Albert, Auckland"
+            />
           </div>
         </div>
         <ContactForm />
@@ -464,7 +525,7 @@ function Footer() {
 }
 
 function StructuredData() {
-  const data = {
+  const businessData = {
     "@context": "https://schema.org",
     "@type": "Plumber",
     name: site.name,
@@ -472,22 +533,99 @@ function StructuredData() {
     telephone: "+64 27 549 9090",
     email: site.email,
     image: `${site.url}/portobello-logo.png`,
-    areaServed: {
-      "@type": "City",
-      name: "Auckland",
-    },
+    priceRange: "$$",
+    areaServed: [
+      { "@type": "City", name: "Auckland" },
+      { "@type": "Place", name: "Central Auckland" },
+      { "@type": "Place", name: "West Auckland" },
+    ],
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Auckland",
+      streetAddress: "15A Sainsbury Rd",
+      addressLocality: "Mt Albert",
+      addressRegion: "Auckland",
+      postalCode: "1025",
       addressCountry: "NZ",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -36.8856,
+      longitude: 174.7166,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "07:30",
+        closes: "17:00",
+      },
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "3",
+      bestRating: "5",
     },
   };
 
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What areas do you cover in Auckland?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We cover Central and West Auckland suburbs including Grey Lynn, Ponsonby, Mt Eden, Mt Albert, Sandringham, Avondale, Henderson, New Lynn, and surrounding areas.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you offer free quotes?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, we provide free quotes for most plumbing work. Give us a call on 027 549 9090 or fill out our contact form with details of the job.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What are your rates?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our call-out fee is $130 + GST which includes travel and the first 30 minutes on site. After that, we charge $100 + GST per hour, billed in 15-minute increments. Materials are quoted separately.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are you a licensed plumber?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, Johnny is a New Zealand registered and licensed plumber with full qualifications and insurance.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you handle emergency plumbing?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We handle urgent plumbing issues during business hours (Mon-Fri 7:30am-5pm). For emergencies, call us on 027 549 9090 and we will do our best to help as soon as possible.",
+        },
+      },
+    ],
+  };
+
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
+      />
+    </>
   );
 }
 
@@ -504,6 +642,7 @@ export default function Home() {
         <Reviews />
         <Areas />
         <Pricing />
+        <FAQ />
         <Contact />
       </main>
       <Footer />
