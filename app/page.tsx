@@ -371,12 +371,12 @@ function Pricing() {
 
 const faqs = [
   {
-    question: "Do you offer free quotes?",
+    question: "Do you offer free estimates?",
     answer:
-      "Yes, we provide free quotes for most plumbing work. Call us on 027 549 9090 or fill in the contact form and we'll get back to you promptly.",
+      "Yes, we provide free estimates for most plumbing work. Call us on 027 549 9090 or fill in the contact form and we'll get back to you promptly.",
   },
   {
-    question: "Can I get a quote over the phone?",
+    question: "Can I get an estimate over the phone?",
     answer:
       "Absolutely. A quick call is often the fastest way to sort things out. Give us a ring on 027 549 9090 and we can talk through the job and give you a rough idea of cost on the spot.",
   },
@@ -574,15 +574,15 @@ function StructuredData() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Do you offer free quotes?",
+        name: "Do you offer free estimates?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes, we provide free quotes for most plumbing work. Call us on 027 549 9090 or fill in the contact form and we'll get back to you promptly.",
+          text: "Yes, we provide free estimates for most plumbing work. Call us on 027 549 9090 or fill in the contact form and we'll get back to you promptly.",
         },
       },
       {
         "@type": "Question",
-        name: "Can I get a quote over the phone?",
+        name: "Can I get an estimate over the phone?",
         acceptedAnswer: {
           "@type": "Answer",
           text: "Absolutely. A quick call is often the fastest way to sort things out. Give us a ring on 027 549 9090 and we can talk through the job and give you a rough idea of cost on the spot.",
