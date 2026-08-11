@@ -371,14 +371,14 @@ function Pricing() {
 
 const faqs = [
   {
-    question: "Do you offer free estimates?",
+    question: "Do you offer free quotes?",
     answer:
-      "Yes. We offer free estimates over the phone and free on-site quotes. Call us on 027 549 9090 for a phone estimate, or use the contact form to arrange a time for us to come and quote in person.",
+      "Yes. We offer free estimates over the phone — just give us a ring on 027 549 9090 and we can talk through the job. We also offer free in-person, on-site quotes if you'd prefer us to come and take a look before committing to anything.",
   },
   {
-    question: "Can I get an estimate over the phone?",
+    question: "How quickly can you get to me?",
     answer:
-      "Absolutely. Give us a ring on 027 549 9090 and we can talk through the job and give you a rough idea of cost on the spot. If you'd prefer, we're also happy to come and quote in person, free of charge.",
+      "We're based in Mt Albert so response times across Central and West Auckland are generally good. For urgent jobs during business hours, call 027 549 9090 and we'll do our best to get to you as quickly as possible.",
   },
   {
     question: "Are you a licensed plumber?",
@@ -579,18 +579,18 @@ function StructuredData() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Do you offer free estimates?",
+        name: "Do you offer free quotes?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. We offer free estimates over the phone and free on-site quotes. Call us on 027 549 9090 for a phone estimate, or use the contact form to arrange a time for us to come and quote in person.",
+          text: "Yes. We offer free estimates over the phone — just give us a ring on 027 549 9090 and we can talk through the job. We also offer free in-person, on-site quotes if you'd prefer us to come and take a look before committing to anything.",
         },
       },
       {
         "@type": "Question",
-        name: "Can I get an estimate over the phone?",
+        name: "How quickly can you get to me?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Absolutely. Give us a ring on 027 549 9090 and we can talk through the job and give you a rough idea of cost on the spot. If you'd prefer, we're also happy to come and quote in person, free of charge.",
+          text: "We're based in Mt Albert so response times across Central and West Auckland are generally good. For urgent jobs during business hours, call 027 549 9090 and we'll do our best to get to you as quickly as possible.",
         },
       },
       {
