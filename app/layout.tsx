@@ -19,16 +19,16 @@ const body = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Portobello Plumbing Co | Auckland Plumber",
+    default: "Auckland Plumber | Central & West Auckland | Portobello Plumbing Co",
     template: "%s | Portobello Plumbing Co",
   },
   description:
-    "Friendly, dependable plumbing across Auckland. Repairs, drainage, hot water and renovations. Call Portobello Plumbing Co today.",
+    "Licensed Auckland plumber covering Grey Lynn, Ponsonby, Mt Eden, Mt Albert & Central/West suburbs. Hot water, blocked drains, bathrooms. Call 027 549 9090 for a free quote.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Portobello Plumbing Co | Auckland Plumber",
+    title: "Auckland Plumber | Central & West Auckland | Portobello Plumbing Co",
     description:
-      "Great plumbing. No dramas. Friendly, dependable plumbing across Auckland.",
+      "Licensed Auckland plumber covering Grey Lynn, Ponsonby, Mt Eden & Central/West suburbs. Call 027 549 9090.",
     url: site.url,
     siteName: site.name,
     locale: "en_NZ",

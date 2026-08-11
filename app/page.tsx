@@ -369,6 +369,55 @@ function Pricing() {
   );
 }
 
+const faqs = [
+  {
+    question: "Do you offer free estimates?",
+    answer:
+      "Yes. We offer free estimates over the phone and free on-site quotes. Call us on 027 549 9090 for a phone estimate, or use the contact form to arrange a time for us to come and quote in person.",
+  },
+  {
+    question: "Can I get an estimate over the phone?",
+    answer:
+      "Absolutely. Give us a ring on 027 549 9090 and we can talk through the job and give you a rough idea of cost on the spot. If you'd prefer, we're also happy to come and quote in person, free of charge.",
+  },
+  {
+    question: "Are you a licensed plumber?",
+    answer:
+      "Yes, Johnny is a fully qualified, New Zealand registered and licensed plumber with full insurance.",
+  },
+  {
+    question: "Do you guarantee your work?",
+    answer:
+      "Yes. We provide a 12-month workmanship warranty on all our work. If something isn't right, let us know and we'll come back and sort it. No fuss.",
+  },
+  {
+    question: "Do you handle emergencies?",
+    answer:
+      "We handle urgent jobs during business hours (Mon–Fri 8:30am–5pm). Call 027 549 9090 and we'll do our best to help as quickly as possible.",
+  },
+];
+
+function FAQ() {
+  return (
+    <section className="section faq" id="faq">
+      <div className="shell">
+        <div className="faq__head">
+          <p className="eyebrow">Common questions</p>
+          <h2 className="section-title">Good to know.</h2>
+        </div>
+        <div className="faq__grid">
+          {faqs.map((faq) => (
+            <details className="faq__item" key={faq.question}>
+              <summary className="faq__question">{faq.question}</summary>
+              <p className="faq__answer">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section className="section contact" id="contact">
@@ -405,8 +454,20 @@ function Contact() {
               <span>
                 <Clock3 size={19} aria-hidden="true" />
               </span>
-              Hours by arrangement
+              Mon–Fri: 8:30am – 5:00pm
             </div>
+          </div>
+          <div className="contact__map">
+            <iframe
+              src="https://maps.google.com/maps?q=Portobello+Plumbing+Co,+15A+Sainsbury+Road,+Mount+Albert,+Auckland&output=embed&z=15"
+              width="100%"
+              height="200"
+              style={{ border: 0, borderRadius: "8px", marginTop: "24px" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Portobello Plumbing - 15A Sainsbury Rd, Mt Albert, Auckland"
+            />
           </div>
         </div>
         <ContactForm />
@@ -456,6 +517,11 @@ function Footer() {
           <div className="footer__legal">
             <a href="/terms">Terms of Trade</a>
             <a href="/pre-purchase-terms">Pre-purchase inspection terms</a>
+            <a href="/plumber-grey-lynn">Plumber Grey Lynn</a>
+            <a href="/plumber-ponsonby">Plumber Ponsonby</a>
+            <a href="/plumber-mt-albert">Plumber Mt Albert</a>
+            <a href="/plumber-mt-eden">Plumber Mt Eden</a>
+            <a href="/hot-water-cylinder-auckland">Hot Water Cylinder Auckland</a>
           </div>
         </div>
       </div>
@@ -464,7 +530,7 @@ function Footer() {
 }
 
 function StructuredData() {
-  const data = {
+  const businessData = {
     "@context": "https://schema.org",
     "@type": "Plumber",
     name: site.name,
@@ -472,22 +538,99 @@ function StructuredData() {
     telephone: "+64 27 549 9090",
     email: site.email,
     image: `${site.url}/portobello-logo.png`,
-    areaServed: {
-      "@type": "City",
-      name: "Auckland",
-    },
+    priceRange: "$$",
+    areaServed: [
+      { "@type": "City", name: "Auckland" },
+      { "@type": "Place", name: "Central Auckland" },
+      { "@type": "Place", name: "West Auckland" },
+    ],
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Auckland",
+      streetAddress: "15A Sainsbury Rd",
+      addressLocality: "Mt Albert",
+      addressRegion: "Auckland",
+      postalCode: "1025",
       addressCountry: "NZ",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -36.8856,
+      longitude: 174.7166,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:30",
+        closes: "17:00",
+      },
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "3",
+      bestRating: "5",
     },
   };
 
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Do you offer free estimates?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. We offer free estimates over the phone and free on-site quotes. Call us on 027 549 9090 for a phone estimate, or use the contact form to arrange a time for us to come and quote in person.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I get an estimate over the phone?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely. Give us a ring on 027 549 9090 and we can talk through the job and give you a rough idea of cost on the spot. If you'd prefer, we're also happy to come and quote in person, free of charge.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are you a licensed plumber?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, Johnny is a New Zealand registered and licensed plumber with full qualifications and insurance.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you guarantee your work?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. We provide a 12-month workmanship warranty on all our work. If something isn't right, let us know and we'll come back and sort it. No fuss.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you handle emergency plumbing?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We handle urgent plumbing issues during business hours (Mon-Fri 8:30am-5pm). Call us on 027 549 9090 and we will do our best to help as quickly as possible.",
+        },
+      },
+    ],
+  };
+
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
+      />
+    </>
   );
 }
 
@@ -505,6 +648,7 @@ export default function Home() {
         <Areas />
         <Pricing />
         <Contact />
+        <FAQ />
       </main>
       <Footer />
       <a className="mobile-call" href={site.phoneHref}>

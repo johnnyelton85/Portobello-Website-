@@ -16,7 +16,14 @@ export const site = {
   phoneHref: "tel:+64275499090",
   email: "hello@portobelloplumbing.co.nz",
   emailHref: "mailto:hello@portobelloplumbing.co.nz",
-  location: "Auckland, New Zealand",
+  location: "15A Sainsbury Rd, Mt Albert, Auckland",
+  address: {
+    street: "15A Sainsbury Rd",
+    suburb: "Mt Albert",
+    city: "Auckland",
+    country: "New Zealand",
+  },
+  hours: "Mon–Fri: 8:30am – 5:00pm",
   url: "https://portobelloplumbing.co.nz",
 };
 
@@ -24,6 +31,7 @@ export const navItems = [
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
   { label: "Reviews", href: "#reviews" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
