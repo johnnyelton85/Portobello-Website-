@@ -23,7 +23,7 @@ export const site = {
     city: "Auckland",
     country: "New Zealand",
   },
-  hours: "Mon–Fri: 7:30am – 5:00pm",
+  hours: "Mon–Fri: 8:30am – 5:00pm",
   url: "https://portobelloplumbing.co.nz",
 };
 

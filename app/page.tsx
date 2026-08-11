@@ -393,7 +393,7 @@ const faqs = [
   {
     question: "Do you handle emergencies?",
     answer:
-      "We handle urgent jobs during business hours (Mon–Fri 7:30am–5pm). Call 027 549 9090 and we'll do our best to help quickly.",
+      "We handle urgent jobs during business hours (Mon–Fri 8:30am–5pm). Call 027 549 9090 and we'll do our best to help quickly.",
   },
 ];
 
@@ -454,7 +454,7 @@ function Contact() {
               <span>
                 <Clock3 size={19} aria-hidden="true" />
               </span>
-              Mon–Fri: 7:30am – 5:00pm
+              Mon–Fri: 8:30am – 5:00pm
             </div>
           </div>
           <div className="contact__map">
@@ -556,7 +556,7 @@ function StructuredData() {
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "07:30",
+        opens: "08:30",
         closes: "17:00",
       },
     ],
@@ -609,7 +609,7 @@ function StructuredData() {
         name: "Do you handle emergency plumbing?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We handle urgent plumbing issues during business hours (Mon-Fri 7:30am-5pm). For emergencies, call us on 027 549 9090 and we will do our best to help as soon as possible.",
+          text: "We handle urgent plumbing issues during business hours (Mon-Fri 8:30am-5pm). For emergencies, call us on 027 549 9090 and we will do our best to help as soon as possible.",
         },
       },
     ],
