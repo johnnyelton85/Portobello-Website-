@@ -263,7 +263,6 @@ export function LandingPage({
               <Link href="/plumber-ponsonby">Plumber Ponsonby</Link>
               <Link href="/plumber-mt-albert">Plumber Mt Albert</Link>
               <Link href="/plumber-mt-eden">Plumber Mt Eden</Link>
-              <Link href="/hot-water-auckland">Hot Water Auckland</Link>
               <Link href="/hot-water-cylinder-auckland">Hot Water Cylinder Auckland</Link>
             </div>
           </div>

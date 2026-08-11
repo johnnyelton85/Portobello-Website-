@@ -521,7 +521,6 @@ function Footer() {
             <a href="/plumber-ponsonby">Plumber Ponsonby</a>
             <a href="/plumber-mt-albert">Plumber Mt Albert</a>
             <a href="/plumber-mt-eden">Plumber Mt Eden</a>
-            <a href="/hot-water-auckland">Hot Water Auckland</a>
             <a href="/hot-water-cylinder-auckland">Hot Water Cylinder Auckland</a>
           </div>
         </div>
