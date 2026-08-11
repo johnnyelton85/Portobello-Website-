@@ -373,12 +373,12 @@ const faqs = [
   {
     question: "Do you offer free estimates?",
     answer:
-      "Yes, we provide free estimates for most plumbing work. Call us on 027 549 9090 or fill in the contact form and we'll get back to you promptly.",
+      "Yes. We offer free estimates over the phone and free on-site quotes. Call us on 027 549 9090 for a phone estimate, or use the contact form to arrange a time for us to come and quote in person.",
   },
   {
     question: "Can I get an estimate over the phone?",
     answer:
-      "Absolutely. A quick call is often the fastest way to sort things out. Give us a ring on 027 549 9090 and we can talk through the job and give you a rough idea of cost on the spot.",
+      "Absolutely. Give us a ring on 027 549 9090 and we can talk through the job and give you a rough idea of cost on the spot. If you'd prefer, we're also happy to come and quote in person, free of charge.",
   },
   {
     question: "Are you a licensed plumber?",
@@ -577,7 +577,7 @@ function StructuredData() {
         name: "Do you offer free estimates?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes, we provide free estimates for most plumbing work. Call us on 027 549 9090 or fill in the contact form and we'll get back to you promptly.",
+          text: "Yes. We offer free estimates over the phone and free on-site quotes. Call us on 027 549 9090 for a phone estimate, or use the contact form to arrange a time for us to come and quote in person.",
         },
       },
       {
@@ -585,7 +585,7 @@ function StructuredData() {
         name: "Can I get an estimate over the phone?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Absolutely. A quick call is often the fastest way to sort things out. Give us a ring on 027 549 9090 and we can talk through the job and give you a rough idea of cost on the spot.",
+          text: "Absolutely. Give us a ring on 027 549 9090 and we can talk through the job and give you a rough idea of cost on the spot. If you'd prefer, we're also happy to come and quote in person, free of charge.",
         },
       },
       {
