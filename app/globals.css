@@ -806,17 +806,17 @@ main {
 
 .faq__item {
   display: block;
-  padding: 16px 22px;
-  border: 2.5px solid var(--ink);
+  padding: 10px 18px;
+  border: 2px solid var(--ink);
   border-radius: 999px;
   background: var(--paper) !important;
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
   color: var(--ink) !important;
   transition: border-radius 0.2s ease;
 }
 
 .faq__item[open] {
-  border-radius: 20px;
+  border-radius: 16px;
 }
 
 .faq__question {
