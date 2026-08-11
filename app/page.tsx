@@ -388,7 +388,7 @@ const faqs = [
   {
     question: "Do you guarantee your work?",
     answer:
-      "Yes. We stand behind the quality of our work. If something isn't right after the job is done, we'll come back and sort it. No fuss.",
+      "Yes. We provide a 12-month workmanship warranty on all our work. If something isn't right, let us know and we'll come back and sort it. No fuss.",
   },
   {
     question: "Do you handle emergencies?",
@@ -601,7 +601,7 @@ function StructuredData() {
         name: "Do you guarantee your work?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. We stand behind the quality of our work. If something isn't right after the job is done, we'll come back and sort it. No fuss.",
+          text: "Yes. We provide a 12-month workmanship warranty on all our work. If something isn't right, let us know and we'll come back and sort it. No fuss.",
         },
       },
       {
