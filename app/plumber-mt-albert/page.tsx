@@ -13,8 +13,8 @@ export default function MtAlbertPage() {
     <LandingPage
       eyebrow="Your local Mt Albert plumber"
       headline={`Mt Albert's\nlocal plumber.`}
-      subheadline="Based right here in Mt Albert. Licensed, experienced and genuinely easy to deal with — for all residential plumbing in the area."
-      intro="Portobello Plumbing is based in Mt Albert, which means fast response times and a plumber who actually knows the area. We cover Mt Albert and all surrounding suburbs for plumbing repairs, renovations and everything in between."
+      subheadline="Based right here in Mt Albert. Licensed, experienced and genuinely easy to deal with, for all residential plumbing in the area."
+      intro="Portobello Plumbing is based in Mt Albert, which means fast response times and a plumber who actually knows the area. We cover Mt Albert and surrounding suburbs including Morningside, Owairaka and Sandringham, for plumbing repairs, renovations and everything in between."
       services={[
         {
           title: "General Plumbing",
@@ -35,20 +35,6 @@ export default function MtAlbertPage() {
           title: "Pre-purchase Inspections",
           description:
             "Buying in Mt Albert? We provide thorough plumbing inspections with a clear written report before you commit.",
-        },
-      ]}
-      reviews={[
-        {
-          quote:
-            "Really pleased with the work Portobello Plumbing did. Johnny did an excellent job installing our household water filtration system, and at a competitive price. He was very knowledgeable giving us regular updates and recommendations from first consultation to the final installation.",
-          name: "Matt B",
-          suburb: "Pt Chevalier",
-        },
-        {
-          quote:
-            "Johnny did excellent work at our house and was a great communicator throughout. Highly recommend him for anyone needing a reliable, helpful plumber.",
-          name: "Wade T",
-          suburb: "Mt Albert",
         },
       ]}
       checks={[

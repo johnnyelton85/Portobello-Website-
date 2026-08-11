@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, Phone, Mail, MapPin, Clock3 } from "lucide-react";
-import { site } from "@/data/site";
+import { site, reviews as allReviews } from "@/data/site";
 
 type Service = { title: string; description: string };
-type Review = { quote: string; name: string; suburb: string };
 
 type LandingPageProps = {
   eyebrow: string;
@@ -12,9 +11,7 @@ type LandingPageProps = {
   subheadline: string;
   intro: string;
   services: Service[];
-  reviews: Review[];
   checks: string[];
-  metaTitle?: string;
 };
 
 export function LandingPage({
@@ -23,7 +20,6 @@ export function LandingPage({
   subheadline,
   intro,
   services,
-  reviews,
   checks,
 }: LandingPageProps) {
   return (
@@ -91,14 +87,12 @@ export function LandingPage({
           </div>
         </section>
 
-        {/* Intro */}
+        {/* Services */}
         <section className="section lp-intro">
-          <div className="shell lp-intro__grid">
-            <div>
-              <p className="eyebrow">What we do</p>
-              <h2 className="section-title">Plumbing sorted, properly.</h2>
-              <p className="section-intro">{intro}</p>
-            </div>
+          <div className="shell">
+            <p className="eyebrow">What we do</p>
+            <h2 className="section-title">Plumbing sorted, properly.</h2>
+            <p className="section-intro lp-intro__text">{intro}</p>
             <div className="lp-services">
               {services.map((s) => (
                 <div className="lp-service" key={s.title}>
@@ -152,30 +146,28 @@ export function LandingPage({
         </section>
 
         {/* Reviews */}
-        {reviews.length > 0 && (
-          <section className="section reviews">
-            <div className="shell">
-              <div className="reviews__head">
-                <div>
-                  <p className="eyebrow">Word on the street</p>
-                  <h2 className="section-title">What locals say.</h2>
-                </div>
-              </div>
-              <div className="review-grid">
-                {reviews.map((r) => (
-                  <article className="review-card" key={r.name}>
-                    <div className="review-card__stars" aria-label="Five stars">★★★★★</div>
-                    <blockquote>&ldquo;{r.quote}&rdquo;</blockquote>
-                    <div className="review-card__author">
-                      {r.name}
-                      <span>{r.suburb}, Auckland</span>
-                    </div>
-                  </article>
-                ))}
+        <section className="section reviews">
+          <div className="shell">
+            <div className="reviews__head">
+              <div>
+                <p className="eyebrow">Word on the street</p>
+                <h2 className="section-title">What locals say.</h2>
               </div>
             </div>
-          </section>
-        )}
+            <div className="review-grid">
+              {allReviews.map((r) => (
+                <article className="review-card" key={r.name}>
+                  <div className="review-card__stars" aria-label="Five stars">★★★★★</div>
+                  <blockquote>&ldquo;{r.quote}&rdquo;</blockquote>
+                  <div className="review-card__author">
+                    {r.name}
+                    <span>{r.suburb}, Auckland</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* CTA */}
         <section className="section contact" id="contact">

@@ -37,14 +37,6 @@ export default function GreyLynnPage() {
             "Renovation plumbing for bathroom upgrades and kitchen fit-outs. From first fix through to the final fit-off.",
         },
       ]}
-      reviews={[
-        {
-          quote:
-            "We recently had Johnny replace our kitchen tap and install a water filtration system. The whole process was straightforward from start to finish. He was friendly, knowledgeable, and happy to answer a few questions along the way.",
-          name: "Nick K",
-          suburb: "Sandringham",
-        },
-      ]}
       checks={[
         "NZ licensed plumber",
         "Free on-site quotes",

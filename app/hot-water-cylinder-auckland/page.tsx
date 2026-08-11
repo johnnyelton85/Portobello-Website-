@@ -4,7 +4,7 @@ import { LandingPage } from "@/components/landing-page";
 export const metadata: Metadata = {
   title: "Hot Water Cylinder Auckland | Supply & Install | Portobello Plumbing Co",
   description:
-    "Hot water cylinder replacement and installation in Central & West Auckland. Electric, gas and heat pump options. Licensed plumber. Call 027 549 9090.",
+    "Hot water cylinder replacement and installation in Central & West Auckland. Electric and heat pump options. Licensed plumber. Call 027 549 9090.",
   alternates: { canonical: "/hot-water-cylinder-auckland" },
 };
 
@@ -32,17 +32,9 @@ export default function HotWaterCylinderPage() {
             "Heat pump systems use significantly less electricity than standard electric cylinders. A good option if you're looking to reduce running costs long-term.",
         },
         {
-          title: "Gas Hot Water",
+          title: "Hot Water Repairs",
           description:
-            "Continuous flow gas systems heat water on demand, meaning no cylinder and no waiting. We can advise on whether gas is practical for your setup.",
-        },
-      ]}
-      reviews={[
-        {
-          quote:
-            "Really pleased with the work Portobello Plumbing did. Johnny did an excellent job installing our household water filtration system, and at a competitive price. He was very knowledgeable giving us regular updates and recommendations from first consultation to the final installation.",
-          name: "Matt B",
-          suburb: "Pt Chevalier",
+            "Not getting enough hot water, or none at all? We diagnose the issue quickly and carry common parts to get you sorted on the same visit where possible.",
         },
       ]}
       checks={[

@@ -14,7 +14,7 @@ export default function MtEdenPage() {
       eyebrow="Your local Mt Eden plumber"
       headline={`Mt Eden's\nplumber.`}
       subheadline="Licensed, local and easy to deal with. Covering Mt Eden and the surrounding streets for all residential plumbing, big or small."
-      intro="Mt Eden's older villas and bungalows are great homes — but they come with older plumbing. Whether it's a leaking tap, a tired hot water cylinder or a full bathroom renovation, we know these homes well and get the job done properly."
+      intro="Mt Eden's older villas and bungalows are great homes, but they come with older plumbing. Whether it's a leaking tap, a tired hot water cylinder or a full bathroom renovation, we know these homes well and get the job done properly. We also cover nearby Sandringham, Balmoral and Epsom."
       services={[
         {
           title: "General Plumbing",
@@ -35,14 +35,6 @@ export default function MtEdenPage() {
           title: "Blocked Drains",
           description:
             "Fast diagnosis and practical solutions. Older Mt Eden homes can be prone to root ingress — we carry the right gear to clear it properly.",
-        },
-      ]}
-      reviews={[
-        {
-          quote:
-            "We recently had Johnny replace our kitchen tap and install a water filtration system. The whole process was straightforward from start to finish. He was friendly, knowledgeable, and happy to answer a few questions along the way.",
-          name: "Nick K",
-          suburb: "Sandringham",
         },
       ]}
       checks={[
