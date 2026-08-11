@@ -259,6 +259,12 @@ export function LandingPage({
             <span>© {new Date().getFullYear()} Portobello Plumbing Co. All rights reserved.</span>
             <div className="footer__legal">
               <Link href="/terms">Terms of Trade</Link>
+              <Link href="/plumber-grey-lynn">Plumber Grey Lynn</Link>
+              <Link href="/plumber-ponsonby">Plumber Ponsonby</Link>
+              <Link href="/plumber-mt-albert">Plumber Mt Albert</Link>
+              <Link href="/plumber-mt-eden">Plumber Mt Eden</Link>
+              <Link href="/hot-water-auckland">Hot Water Auckland</Link>
+              <Link href="/hot-water-cylinder-auckland">Hot Water Cylinder Auckland</Link>
             </div>
           </div>
         </div>
