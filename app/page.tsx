@@ -371,29 +371,29 @@ function Pricing() {
 
 const faqs = [
   {
-    question: "What areas do you cover?",
-    answer:
-      "We cover Central and West Auckland including Grey Lynn, Ponsonby, Mt Eden, Mt Albert, Sandringham, Avondale, Henderson, New Lynn, and surrounding suburbs.",
-  },
-  {
     question: "Do you offer free quotes?",
     answer:
-      "Yes, we provide free quotes for most plumbing work. Call us on 027 549 9090 or use the contact form with details of the job.",
+      "Yes, we provide free quotes for most plumbing work. Call us on 027 549 9090 or fill in the contact form and we'll get back to you promptly.",
   },
   {
-    question: "What are your call-out fees?",
+    question: "Can I get a quote over the phone?",
     answer:
-      "$130 + GST covers travel and the first 30 minutes on site. After that, it's $100 + GST per hour. Materials are quoted separately.",
+      "Absolutely. A quick call is often the fastest way to sort things out. Give us a ring on 027 549 9090 and we can talk through the job and give you a rough idea of cost on the spot.",
   },
   {
     question: "Are you a licensed plumber?",
     answer:
-      "Yes, Johnny is a fully qualified, New Zealand registered and licensed plumber with insurance.",
+      "Yes, Johnny is a fully qualified, New Zealand registered and licensed plumber with full insurance.",
+  },
+  {
+    question: "Do you guarantee your work?",
+    answer:
+      "Yes. We stand behind the quality of our work. If something isn't right after the job is done, we'll come back and sort it. No fuss.",
   },
   {
     question: "Do you handle emergencies?",
     answer:
-      "We handle urgent jobs during business hours (Mon–Fri 8:30am–5pm). Call 027 549 9090 and we'll do our best to help quickly.",
+      "We handle urgent jobs during business hours (Mon–Fri 8:30am–5pm). Call 027 549 9090 and we'll do our best to help as quickly as possible.",
   },
 ];
 
@@ -459,7 +459,7 @@ function Contact() {
           </div>
           <div className="contact__map">
             <iframe
-              src="https://maps.google.com/maps?q=15A+Sainsbury+Road,+Mount+Albert,+Auckland+1025&output=embed&z=15"
+              src="https://maps.google.com/maps?q=Portobello+Plumbing+Co,+15A+Sainsbury+Road,+Mount+Albert,+Auckland&output=embed&z=15"
               width="100%"
               height="200"
               style={{ border: 0, borderRadius: "8px", marginTop: "24px" }}
@@ -574,26 +574,18 @@ function StructuredData() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "What areas do you cover in Auckland?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "We cover Central and West Auckland suburbs including Grey Lynn, Ponsonby, Mt Eden, Mt Albert, Sandringham, Avondale, Henderson, New Lynn, and surrounding areas.",
-        },
-      },
-      {
-        "@type": "Question",
         name: "Do you offer free quotes?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes, we provide free quotes for most plumbing work. Give us a call on 027 549 9090 or fill out our contact form with details of the job.",
+          text: "Yes, we provide free quotes for most plumbing work. Call us on 027 549 9090 or fill in the contact form and we'll get back to you promptly.",
         },
       },
       {
         "@type": "Question",
-        name: "What are your rates?",
+        name: "Can I get a quote over the phone?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Our call-out fee is $130 + GST which includes travel and the first 30 minutes on site. After that, we charge $100 + GST per hour, billed in 15-minute increments. Materials are quoted separately.",
+          text: "Absolutely. A quick call is often the fastest way to sort things out. Give us a ring on 027 549 9090 and we can talk through the job and give you a rough idea of cost on the spot.",
         },
       },
       {
@@ -606,10 +598,18 @@ function StructuredData() {
       },
       {
         "@type": "Question",
+        name: "Do you guarantee your work?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. We stand behind the quality of our work. If something isn't right after the job is done, we'll come back and sort it. No fuss.",
+        },
+      },
+      {
+        "@type": "Question",
         name: "Do you handle emergency plumbing?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We handle urgent plumbing issues during business hours (Mon-Fri 8:30am-5pm). For emergencies, call us on 027 549 9090 and we will do our best to help as soon as possible.",
+          text: "We handle urgent plumbing issues during business hours (Mon-Fri 8:30am-5pm). Call us on 027 549 9090 and we will do our best to help as quickly as possible.",
         },
       },
     ],
