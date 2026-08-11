@@ -782,31 +782,38 @@ main {
 }
 
 .faq {
-  background: var(--cream);
+  background: var(--teal);
+  color: white;
 }
 
 .faq__head {
   margin-bottom: 48px;
-  text-align: center;
+}
+
+.faq__head .eyebrow {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.faq__head .section-title {
+  color: white;
 }
 
 .faq__grid {
   display: grid;
-  gap: 16px;
-  max-width: 800px;
-  margin: 0 auto;
+  gap: 12px;
 }
 
 .faq__item {
   padding: 20px 24px;
-  border: 2px solid var(--line);
+  border: 2px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
-  background: white;
-  transition: border-color 0.2s ease;
+  background: rgba(255, 255, 255, 0.1);
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .faq__item[open] {
-  border-color: var(--teal);
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .faq__question {
@@ -815,10 +822,13 @@ main {
   justify-content: space-between;
   gap: 16px;
   cursor: pointer;
+  color: white;
   font-family: var(--font-display), sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
+  letter-spacing: 0.01em;
   list-style: none;
+  text-transform: uppercase;
 }
 
 .faq__question::-webkit-details-marker {
@@ -827,29 +837,31 @@ main {
 
 .faq__question::after {
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
+  border: 2px solid white;
   border-radius: 50%;
-  background: var(--teal);
   color: white;
   content: "+";
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
   line-height: 24px;
   text-align: center;
+  text-transform: none;
   transition: transform 0.2s ease;
 }
 
 .faq__item[open] .faq__question::after {
   content: "−";
-  transform: rotate(180deg);
 }
 
 .faq__answer {
-  margin: 16px 0 0;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
+  margin: 14px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.97rem;
   line-height: 1.7;
 }
 
@@ -887,6 +899,7 @@ main {
 }
 
 .contact-form {
+  align-self: start;
   border: 2px solid var(--ink);
   border-radius: 20px;
   padding: 36px;
