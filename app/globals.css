@@ -1092,9 +1092,9 @@ main {
 .lp-service h3 {
   margin: 0 0 6px;
   font-family: var(--font-display), sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--orange-dark);
+  color: var(--ink);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
