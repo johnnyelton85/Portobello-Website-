@@ -273,3 +273,34 @@ tr:nth-child(even) td {
 .page-break {
   break-before: page;
 }
+
+.permit {
+  margin-top: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+}
+
+.permit h3 {
+  margin-top: 0;
+  color: var(--ink);
+}
+
+.permit-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+  margin: 8px 0;
+}
+
+.field {
+  min-height: 36px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 8pt;
+}
+
+.checks li {
+  margin-top: 5px;
+}
