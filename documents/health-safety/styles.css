@@ -197,8 +197,16 @@ strong {
   background: var(--paper);
 }
 
+.sig-img {
+  display: block;
+  height: 54px;
+  width: auto;
+  max-width: 200px;
+  margin: 10px 0 4px;
+}
+
 .sig .line {
-  margin-top: 48px;
+  margin-top: 8px;
   border-top: 1px solid var(--ink);
   padding-top: 6px;
   color: var(--muted);
