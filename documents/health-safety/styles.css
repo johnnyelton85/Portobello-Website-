@@ -191,14 +191,14 @@ strong {
 }
 
 .sig {
-  min-height: 88px;
+  min-height: 110px;
   padding: 12px;
   border: 1px solid var(--line);
   background: var(--paper);
 }
 
 .sig .line {
-  margin-top: 36px;
+  margin-top: 48px;
   border-top: 1px solid var(--ink);
   padding-top: 6px;
   color: var(--muted);
