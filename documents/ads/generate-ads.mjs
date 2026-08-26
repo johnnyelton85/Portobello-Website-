@@ -13,8 +13,10 @@ async function dataUri(filePath, mime) {
 }
 
 const logo = await dataUri(path.join(publicDir, "portobello-logo.png"), "image/png");
+const logoWordmark = await dataUri(path.join(root, "assets/logo-wordmark.png"), "image/png");
 const plumber = await dataUri(path.join(root, "assets/plumber-full.png"), "image/png");
 const johnny = await dataUri(path.join(publicDir, "johnny-profile-close.jpg"), "image/jpeg");
+const siteUrl = "portobelloplumbing.co.nz";
 
 function page({ w, h, body }) {
   return `<!DOCTYPE html>
@@ -103,6 +105,18 @@ function page({ w, h, body }) {
       text-transform: uppercase;
       white-space: nowrap;
     }
+    .cta-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.45em;
+    }
+    .web {
+      margin: 0;
+      color: var(--teal);
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
     .sub { margin: 0; color: var(--muted); font-weight: 650; }
     .foot { color: var(--muted); font-weight: 700; }
     .photo {
@@ -150,7 +164,10 @@ const ads = [
           <p class="eyebrow" style="margin-top: 28px; font-size: 18px;">Your local Auckland plumber</p>
           <h1 style="margin-top: 14px; font-size: 92px;">Great plumbing.<br><em>No dramas.</em></h1>
           <p class="sub" style="margin-top: 18px; font-size: 24px; max-width: 24ch;">Repairs, hot water, drains and renovations. Straight-up service from Mt Albert.</p>
-          <div class="cta" style="margin-top: 24px; padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+          <div class="cta-col" style="margin-top: 24px;">
+            <div class="cta" style="padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+            <p class="web" style="font-size: 18px;">${siteUrl}</p>
+          </div>
         </div>
         <div class="mascot-box"></div>
       </div>
@@ -167,7 +184,10 @@ const ads = [
         <div style="padding: 24px 28px 28px 40px;">
           <img class="logo" src="${logo}" alt="" style="width: 280px;" />
           <h1 style="margin-top: 18px; font-size: 64px;">Great plumbing.<br><em>No dramas.</em></h1>
-          <div class="cta" style="margin-top: 18px; padding: 12px 24px; font-size: 18px;">Call 027 549 9090</div>
+          <div class="cta-col" style="margin-top: 18px;">
+            <div class="cta" style="padding: 12px 24px; font-size: 18px;">Call 027 549 9090</div>
+            <p class="web" style="font-size: 16px;">${siteUrl}</p>
+          </div>
         </div>
         <div class="mascot-box"></div>
       </div>
@@ -184,7 +204,10 @@ const ads = [
         <p class="eyebrow" style="font-size: 22px;">Mt Albert · Auckland</p>
         <h1 style="margin-top: 18px; font-size: 110px;">Great<br>plumbing.<br><em>No dramas.</em></h1>
         <p class="sub" style="margin-top: 22px; font-size: 28px;">Licensed plumber. Clear communication. Tidy work.</p>
-        <div class="cta" style="margin-top: 28px; padding: 20px 36px; font-size: 26px;">Call 027 549 9090</div>
+        <div class="cta-col" style="margin-top: 28px;">
+          <div class="cta" style="padding: 20px 36px; font-size: 26px;">Call 027 549 9090</div>
+          <p class="web" style="font-size: 20px;">${siteUrl}</p>
+        </div>
       </div>
       <div class="mascot-box"></div>
     </div>`,
@@ -202,7 +225,10 @@ const ads = [
           <p class="eyebrow" style="margin-top: 32px; font-size: 18px;">Cylinder repair and replace</p>
           <h1 style="margin-top: 14px; font-size: 78px;">No hot water?<br><em>We can sort it.</em></h1>
           <p class="sub" style="margin-top: 16px; font-size: 24px;">Repairs, replacements and new installs sized for your house.</p>
-          <div class="cta" style="margin-top: 24px; padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+          <div class="cta-col" style="margin-top: 24px;">
+            <div class="cta" style="padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+            <p class="web" style="font-size: 18px;">${siteUrl}</p>
+          </div>
         </div>
         <div class="mascot-box"></div>
       </div>
@@ -221,7 +247,10 @@ const ads = [
           <p class="eyebrow" style="margin-top: 32px; font-size: 18px;">Fast diagnosis</p>
           <h1 style="margin-top: 14px; font-size: 78px;">Drains blocked?<br><em>Get it flowing.</em></h1>
           <p class="sub" style="margin-top: 16px; font-size: 24px;">Practical drainage solutions without the runaround.</p>
-          <div class="cta" style="margin-top: 24px; padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+          <div class="cta-col" style="margin-top: 24px;">
+            <div class="cta" style="padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+            <p class="web" style="font-size: 18px;">${siteUrl}</p>
+          </div>
         </div>
         <div class="mascot-box"></div>
       </div>
@@ -238,7 +267,10 @@ const ads = [
         <div style="display: flex; flex-direction: column; justify-content: center;">
           <img class="logo" src="${logo}" alt="" style="width: 240px;" />
           <h1 style="margin-top: 16px; font-size: 48px;">Straight-up<br><em>pricing.</em></h1>
-          <div class="cta" style="margin-top: 16px; padding: 10px 20px; font-size: 16px;">Call 027 549 9090</div>
+          <div class="cta-col" style="margin-top: 16px;">
+            <div class="cta" style="padding: 10px 20px; font-size: 16px;">Call 027 549 9090</div>
+            <p class="web" style="font-size: 14px;">${siteUrl}</p>
+          </div>
         </div>
         <div style="display: grid; gap: 12px; align-content: center;">
           <div style="padding: 16px 20px; border: 3px solid var(--ink); background: #fff; box-shadow: 6px 6px 0 var(--orange);">
@@ -267,7 +299,10 @@ const ads = [
         <div style="padding: 32px 40px 36px; background: var(--cream);">
           <p class="eyebrow" style="font-size: 18px;">Meet your plumber</p>
           <h1 style="margin-top: 10px; font-size: 64px;">Johnny. Licensed,<br><em>local, easy to deal with.</em></h1>
-          <div class="cta" style="margin-top: 18px; padding: 14px 28px; font-size: 22px;">Call 027 549 9090</div>
+          <div class="cta-col" style="margin-top: 18px;">
+            <div class="cta" style="padding: 14px 28px; font-size: 22px;">Call 027 549 9090</div>
+            <p class="web" style="font-size: 18px;">${siteUrl}</p>
+          </div>
         </div>
       </div>
     </div>`,
@@ -284,7 +319,10 @@ const ads = [
           <img class="logo" src="${logo}" alt="" style="width: 280px;" />
           <h1 style="margin-top: 18px; font-size: 64px;">Your local<br><em>Auckland plumber.</em></h1>
           <p class="sub" style="margin-top: 12px; font-size: 22px;">Based in Mt Albert. Covering Central and West.</p>
-          <div class="cta" style="margin-top: 18px; padding: 12px 24px; font-size: 18px;">Call 027 549 9090</div>
+          <div class="cta-col" style="margin-top: 18px;">
+            <div class="cta" style="padding: 12px 24px; font-size: 18px;">Call 027 549 9090</div>
+            <p class="web" style="font-size: 16px;">${siteUrl}</p>
+          </div>
         </div>
         <div class="mascot-box"></div>
       </div>
@@ -303,7 +341,10 @@ const ads = [
           <p class="eyebrow" style="margin-top: 32px; font-size: 18px;">Pre-purchase inspections</p>
           <h1 style="margin-top: 14px; font-size: 72px;">Know the plumbing<br><em>before you commit.</em></h1>
           <p class="sub" style="margin-top: 16px; font-size: 24px;">A clear report on condition, from a licensed plumber.</p>
-          <div class="cta" style="margin-top: 24px; padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+          <div class="cta-col" style="margin-top: 24px;">
+            <div class="cta" style="padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+            <p class="web" style="font-size: 18px;">${siteUrl}</p>
+          </div>
         </div>
         <div class="mascot-box"></div>
       </div>
@@ -318,7 +359,10 @@ const ads = [
       <div style="display: flex; flex-direction: column; min-width: 0;">
         <img class="logo" src="${logo}" alt="" style="width: 140px;" />
         <h1 style="margin-top: 8px; font-size: 26px;">Great plumbing.<br><em>No dramas.</em></h1>
-        <div class="cta" style="margin-top: auto; padding: 7px 10px; font-size: 11px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
+        <div class="cta-col" style="margin-top: auto;">
+          <div class="cta" style="padding: 7px 10px; font-size: 11px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
+          <p class="web" style="font-size: 10px;">${siteUrl}</p>
+        </div>
       </div>
       <div class="mascot-box"></div>
     </div>`,
@@ -334,7 +378,10 @@ const ads = [
         <img class="logo" src="${logo}" alt="" style="width: 180px;" />
         <h1 style="margin-top: 12px; font-size: 36px;">Great plumbing.<br><em>No dramas.</em></h1>
         <p class="sub" style="margin-top: 10px; font-size: 14px;">Hot water, drains, repairs. Mt Albert based.</p>
-        <div class="cta" style="margin-top: 12px; padding: 9px 12px; font-size: 13px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
+        <div class="cta-col" style="margin-top: 12px;">
+          <div class="cta" style="padding: 9px 12px; font-size: 13px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
+          <p class="web" style="font-size: 12px;">${siteUrl}</p>
+        </div>
       </div>
       <div class="mascot-box"></div>
     </div>`,
@@ -344,11 +391,13 @@ const ads = [
     w: 728,
     h: 90,
     body: `
-    <div class="ad" style="display: flex; align-items: center; gap: 12px; padding: 6px 12px;">
-      <img class="logo" src="${logo}" alt="" style="width: 148px; flex-shrink: 0;" />
-      <h1 style="font-size: 24px; flex: 1;">Great plumbing. <em>No dramas.</em></h1>
-      <div class="mascot-box" style="height: 78px; width: 86px; flex-shrink: 0;"></div>
-      <div class="cta" style="padding: 8px 12px; font-size: 12px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
+    <div class="ad" style="display: flex; align-items: center; gap: 14px; padding: 8px 14px;">
+      <img class="logo" src="${logoWordmark}" alt="" style="width: 168px; flex-shrink: 0;" />
+      <h1 style="font-size: 22px; flex: 1; line-height: 0.9;">Great plumbing.<br><em>No dramas.</em></h1>
+      <div class="cta-col" style="align-items: flex-end; flex-shrink: 0;">
+        <div class="cta" style="padding: 8px 14px; font-size: 13px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
+        <p class="web" style="font-size: 12px;">${siteUrl}</p>
+      </div>
     </div>`,
   },
 ];
@@ -357,12 +406,12 @@ await mkdir(outDir, { recursive: true });
 const browser = await chromium.launch();
 
 for (const ad of ads) {
-  const scale = ad.w <= 728 ? 1 : 2;
   const pg = await browser.newPage({
     viewport: { width: ad.w, height: ad.h },
-    deviceScaleFactor: scale,
+    deviceScaleFactor: 2,
   });
   await pg.setContent(page(ad), { waitUntil: "networkidle" });
+  await pg.evaluate(() => document.fonts.ready);
   await pg.screenshot({
     path: path.join(outDir, `${ad.name}.png`),
     type: "png",
