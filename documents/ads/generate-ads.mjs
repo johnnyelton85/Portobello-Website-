@@ -414,9 +414,10 @@ await mkdir(outDir, { recursive: true });
 const browser = await chromium.launch();
 
 for (const ad of ads) {
+  const isStandardDisplay = ad.name.startsWith("10-") || ad.name.startsWith("11-") || ad.name.startsWith("12-");
   const pg = await browser.newPage({
     viewport: { width: ad.w, height: ad.h },
-    deviceScaleFactor: 2,
+    deviceScaleFactor: isStandardDisplay ? 1 : 2,
   });
   await pg.setContent(page(ad), { waitUntil: "networkidle" });
   await pg.evaluate(() => document.fonts.ready);
