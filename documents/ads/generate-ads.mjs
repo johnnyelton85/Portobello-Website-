@@ -413,21 +413,28 @@ const ads = [
 await mkdir(outDir, { recursive: true });
 const browser = await chromium.launch();
 
-for (const ad of ads) {
-  const isStandardDisplay = ad.name.startsWith("10-") || ad.name.startsWith("11-") || ad.name.startsWith("12-");
+async function writeAd(ad, { scale = 1, suffix = "" } = {}) {
   const pg = await browser.newPage({
     viewport: { width: ad.w, height: ad.h },
-    deviceScaleFactor: isStandardDisplay ? 1 : 2,
+    deviceScaleFactor: scale,
   });
   await pg.setContent(page(ad), { waitUntil: "networkidle" });
   await pg.evaluate(() => document.fonts.ready);
   await pg.screenshot({
-    path: path.join(outDir, `${ad.name}.png`),
+    path: path.join(outDir, `${ad.name}${suffix}.png`),
     type: "png",
     clip: { x: 0, y: 0, width: ad.w, height: ad.h },
   });
   await pg.close();
-  console.log(`Wrote ${ad.name}.png`);
+  console.log(`Wrote ${ad.name}${suffix}.png`);
+}
+
+for (const ad of ads) {
+  const isStandardDisplay = ad.name.startsWith("10-") || ad.name.startsWith("11-") || ad.name.startsWith("12-");
+  await writeAd(ad, { scale: isStandardDisplay ? 1 : 2 });
+  if (isStandardDisplay) {
+    await writeAd(ad, { scale: 2, suffix: "@2x" });
+  }
 }
 
 await browser.close();
