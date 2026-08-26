@@ -146,6 +146,41 @@ function page({ w, h, body }) {
       align-self: stretch;
       padding: 18px 32px 20px 24px;
     }
+    .promo-badge {
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
+      height: 160px;
+      border: 5px solid var(--ink);
+      border-radius: 999px;
+      background: var(--teal);
+      box-shadow: 8px 8px 0 var(--ink);
+      color: #fff;
+      font-weight: 800;
+      line-height: 0.9;
+      text-align: center;
+      text-transform: uppercase;
+      transform: rotate(-7deg);
+    }
+    .promo-badge strong {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 46px;
+      letter-spacing: -0.03em;
+    }
+    .promo-badge span {
+      margin-top: 6px;
+      font-size: 17px;
+      letter-spacing: 0.06em;
+    }
+    .promo-badge small {
+      margin-top: 7px;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+    }
     .split {
       display: grid;
       height: 100%;
@@ -156,6 +191,23 @@ function page({ w, h, body }) {
 </head>
 <body>${body}</body>
 </html>`;
+}
+
+function promoBadge(style = "", scale = 1) {
+  const sizeStyles = scale === 0.52
+    ? "width: 82px; height: 82px; border-width: 3px; box-shadow: 4px 4px 0 var(--ink);"
+    : scale === 0.75
+      ? "width: 120px; height: 120px; border-width: 4px; box-shadow: 6px 6px 0 var(--ink);"
+      : "";
+  const strongSize = scale === 0.52 ? "font-size: 24px;" : scale === 0.75 ? "font-size: 34px;" : "";
+  const spanSize = scale === 0.52 ? "font-size: 9px; margin-top: 3px;" : scale === 0.75 ? "font-size: 13px; margin-top: 4px;" : "";
+  const smallSize = scale === 0.52 ? "font-size: 6px; margin-top: 3px;" : scale === 0.75 ? "font-size: 8px; margin-top: 5px;" : "";
+
+  return `<div class="promo-badge" style="${sizeStyles} ${style}">
+    <strong style="${strongSize}">$30 off</strong>
+    <span style="${spanSize}">first visit</span>
+    <small style="${smallSize}">T&Cs apply</small>
+  </div>`;
 }
 
 const ads = [
@@ -408,6 +460,89 @@ const ads = [
       </div>
     </div>`,
   },
+  {
+    name: "13-promo-brand-square-1080",
+    w: 1080,
+    h: 1080,
+    body: `
+    <div class="ad" style="display: grid; grid-template-rows: auto minmax(0, 1fr);">
+      <div class="bar" style="padding: 14px 36px; font-size: 18px;">Auckland · Local plumber</div>
+      ${promoBadge("right: 60px; top: 94px;")}
+      <div class="split" style="grid-template-columns: 1.05fr 0.95fr;">
+        <div style="padding: 32px 28px 36px 48px;">
+          <img class="logo" src="${logo}" alt="" style="width: 380px;" />
+          <p class="eyebrow" style="margin-top: 28px; font-size: 18px;">Your local Auckland plumber</p>
+          <h1 style="margin-top: 14px; font-size: 92px;">Great plumbing.<br><em>No dramas.</em></h1>
+          <p class="sub" style="margin-top: 18px; font-size: 24px; max-width: 24ch;">Repairs, hot water, drains and renovations. Straight-up service from Mt Albert.</p>
+          <div class="cta-col" style="margin-top: 24px;">
+            <div class="cta" style="padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+            <div class="web" style="padding: 16px 30px; font-size: 20px;">${siteUrl}</div>
+          </div>
+        </div>
+        <div class="mascot-box"></div>
+      </div>
+    </div>`,
+  },
+  {
+    name: "14-promo-local-landscape-1200x628",
+    w: 1200,
+    h: 628,
+    body: `
+    <div class="ad" style="display: grid; grid-template-rows: auto minmax(0, 1fr);">
+      <div class="bar" style="padding: 10px 32px; font-size: 14px;">Grey Lynn · Ponsonby · Mt Eden · Mt Albert and around</div>
+      ${promoBadge("right: 34px; top: 64px;", 0.75)}
+      <div class="split" style="grid-template-columns: 1.15fr 0.85fr;">
+        <div style="padding: 28px 24px 28px 44px;">
+          <img class="logo" src="${logo}" alt="" style="width: 280px;" />
+          <h1 style="margin-top: 18px; font-size: 64px;">Your local<br><em>Auckland plumber.</em></h1>
+          <p class="sub" style="margin-top: 12px; font-size: 22px;">Based in Mt Albert. Covering Central and West.</p>
+          <div class="cta-col" style="margin-top: 18px;">
+            <div class="cta" style="padding: 12px 24px; font-size: 18px;">Call 027 549 9090</div>
+            <div class="web" style="padding: 12px 24px; font-size: 18px;">${siteUrl}</div>
+          </div>
+        </div>
+        <div class="mascot-box"></div>
+      </div>
+    </div>`,
+  },
+  {
+    name: "15-promo-display-300x250",
+    w: 300,
+    h: 250,
+    body: `
+    <div class="ad split" style="grid-template-columns: 1.1fr 0.9fr; padding: 10px 8px 10px 12px;">
+      ${promoBadge("right: 12px; top: 8px;", 0.52)}
+      <div style="display: flex; flex-direction: column; min-width: 0;">
+        <img class="logo" src="${logo}" alt="" style="width: 140px;" />
+        <h1 style="margin-top: 8px; font-size: 26px;">Great plumbing.<br><em>No dramas.</em></h1>
+        <div class="cta-col" style="margin-top: auto;">
+          <div class="cta" style="padding: 7px 10px; font-size: 11px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
+          <div class="web" style="padding: 7px 10px; font-size: 11px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">${siteUrl}</div>
+        </div>
+      </div>
+      <div class="mascot-box"></div>
+    </div>`,
+  },
+  {
+    name: "16-promo-display-300x600",
+    w: 300,
+    h: 600,
+    body: `
+    <div class="ad" style="display: grid; grid-template-rows: auto auto minmax(0, 1fr); height: 100%;">
+      <div class="bar" style="padding: 8px 12px; font-size: 11px;">Auckland plumber</div>
+      ${promoBadge("right: 18px; top: 338px;", 0.75)}
+      <div style="padding: 14px 16px 8px;">
+        <img class="logo" src="${logo}" alt="" style="width: 180px;" />
+        <h1 style="margin-top: 12px; font-size: 36px;">Great plumbing.<br><em>No dramas.</em></h1>
+        <p class="sub" style="margin-top: 10px; font-size: 14px;">Hot water, drains, repairs. Mt Albert based.</p>
+        <div class="cta-col" style="margin-top: 12px;">
+          <div class="cta" style="padding: 9px 12px; font-size: 13px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
+          <div class="web" style="padding: 9px 12px; font-size: 13px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">${siteUrl}</div>
+        </div>
+      </div>
+      <div class="mascot-box"></div>
+    </div>`,
+  },
 ];
 
 await mkdir(outDir, { recursive: true });
@@ -430,7 +565,9 @@ async function writeAd(ad, { scale = 1, suffix = "" } = {}) {
 }
 
 for (const ad of ads) {
-  const isStandardDisplay = ad.name.startsWith("10-") || ad.name.startsWith("11-") || ad.name.startsWith("12-");
+  const isStandardDisplay = (ad.w === 300 && ad.h === 250)
+    || (ad.w === 300 && ad.h === 600)
+    || (ad.w === 728 && ad.h === 90);
   await writeAd(ad, { scale: isStandardDisplay ? 1 : 2 });
   if (isStandardDisplay) {
     await writeAd(ad, { scale: 2, suffix: "@2x" });
