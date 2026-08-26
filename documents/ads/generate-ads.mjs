@@ -530,7 +530,7 @@ const ads = [
     body: `
     <div class="ad" style="display: grid; grid-template-rows: auto auto minmax(0, 1fr); height: 100%;">
       <div class="bar" style="padding: 8px 12px; font-size: 11px;">Auckland plumber</div>
-      ${promoBadge("right: 18px; top: 338px;", 0.75)}
+      ${promoBadge("right: 18px; top: 350px;", 0.52)}
       <div style="padding: 14px 16px 8px;">
         <img class="logo" src="${logo}" alt="" style="width: 180px;" />
         <h1 style="margin-top: 12px; font-size: 36px;">Great plumbing.<br><em>No dramas.</em></h1>
