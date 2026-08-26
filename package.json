@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "ads:export": "node documents/ads/generate-ads.mjs"
   },
   "repository": {
     "type": "git",
