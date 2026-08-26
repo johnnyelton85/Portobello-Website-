@@ -7,14 +7,14 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.resolve(root, "../../public");
 const outDir = path.join(root, "exports");
 
-async function dataUri(name, mime) {
-  const buf = await readFile(path.join(publicDir, name));
+async function dataUri(filePath, mime) {
+  const buf = await readFile(filePath);
   return `data:${mime};base64,${buf.toString("base64")}`;
 }
 
-const logo = await dataUri("portobello-logo.png", "image/png");
-const plumber = await dataUri("portobello-plumber.png", "image/png");
-const johnny = await dataUri("johnny-profile-close.jpg", "image/jpeg");
+const logo = await dataUri(path.join(publicDir, "portobello-logo.png"), "image/png");
+const plumber = await dataUri(path.join(root, "assets/plumber-full.png"), "image/png");
+const johnny = await dataUri(path.join(publicDir, "johnny-profile-close.jpg"), "image/jpeg");
 
 function page({ w, h, body }) {
   return `<!DOCTYPE html>
@@ -48,6 +48,12 @@ function page({ w, h, body }) {
       height: var(--h);
       overflow: hidden;
       background: var(--cream);
+      min-width: 0;
+      min-height: 0;
+    }
+    .ad > * {
+      min-width: 0;
+      min-height: 0;
     }
     .bar {
       background: var(--orange);
@@ -103,9 +109,34 @@ function page({ w, h, body }) {
       object-fit: cover;
       background: #ddd;
     }
-    .plumber {
+    .mascot-box {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+      padding: 6% 8% 4%;
+      min-width: 0;
+      min-height: 0;
+      height: 100%;
+      align-self: stretch;
+    }
+    .mascot-box img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      min-width: 0;
+      min-height: 0;
       object-fit: contain;
-      object-position: bottom center;
+      object-position: center bottom;
+      flex: 0 1 auto;
+    }
+    .split {
+      display: grid;
+      height: 100%;
+      min-height: 0;
+      grid-template-rows: minmax(0, 1fr);
     }
   </style>
 </head>
@@ -119,16 +150,20 @@ const ads = [
     w: 1080,
     h: 1080,
     body: `
-    <div class="ad">
+    <div class="ad" style="display: grid; grid-template-rows: auto minmax(0, 1fr);">
       <div class="bar" style="padding: 14px 36px; font-size: 18px;">Auckland · Local plumber</div>
-      <div style="padding: 36px 48px 0;">
-        <img class="logo" src="${logo}" alt="" style="width: 420px;" />
-        <p class="eyebrow" style="margin-top: 36px; font-size: 20px;">Your local Auckland plumber</p>
-        <h1 style="margin-top: 16px; font-size: 118px;">Great plumbing.<br><em>No dramas.</em></h1>
-        <p class="sub" style="margin-top: 22px; font-size: 28px; max-width: 28ch;">Repairs, hot water, drains and renovations. Straight-up service from Mt Albert.</p>
-        <div class="cta" style="margin-top: 32px; padding: 18px 36px; font-size: 26px;">Call 027 549 9090</div>
+      <div class="split" style="grid-template-columns: 1.05fr 0.95fr;">
+        <div style="padding: 32px 28px 36px 48px;">
+          <img class="logo" src="${logo}" alt="" style="width: 380px;" />
+          <p class="eyebrow" style="margin-top: 28px; font-size: 18px;">Your local Auckland plumber</p>
+          <h1 style="margin-top: 14px; font-size: 92px;">Great plumbing.<br><em>No dramas.</em></h1>
+          <p class="sub" style="margin-top: 18px; font-size: 24px; max-width: 24ch;">Repairs, hot water, drains and renovations. Straight-up service from Mt Albert.</p>
+          <div class="cta" style="margin-top: 24px; padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+        </div>
+        <div class="mascot-box">
+          <img src="${plumber}" alt="" />
+        </div>
       </div>
-      <img class="plumber" src="${plumber}" alt="" style="position: absolute; right: -20px; bottom: -8px; height: 58%;" />
     </div>`,
   },
   {
@@ -136,15 +171,17 @@ const ads = [
     w: 1200,
     h: 628,
     body: `
-    <div class="ad">
+    <div class="ad" style="display: grid; grid-template-rows: auto minmax(0, 1fr);">
       <div class="bar" style="padding: 10px 32px; font-size: 14px;">Central and West Auckland</div>
-      <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; height: calc(100% - 38px);">
-        <div style="padding: 28px 40px 32px;">
-          <img class="logo" src="${logo}" alt="" style="width: 300px;" />
-          <h1 style="margin-top: 22px; font-size: 72px;">Great plumbing.<br><em>No dramas.</em></h1>
-          <div class="cta" style="margin-top: 22px; padding: 14px 26px; font-size: 20px;">Call 027 549 9090</div>
+      <div class="split" style="grid-template-columns: 1.1fr 0.9fr;">
+        <div style="padding: 24px 28px 28px 40px;">
+          <img class="logo" src="${logo}" alt="" style="width: 280px;" />
+          <h1 style="margin-top: 18px; font-size: 64px;">Great plumbing.<br><em>No dramas.</em></h1>
+          <div class="cta" style="margin-top: 18px; padding: 12px 24px; font-size: 18px;">Call 027 549 9090</div>
         </div>
-        <img class="plumber" src="${plumber}" alt="" style="width: 100%; height: 100%; object-position: center 20%;" />
+        <div class="mascot-box">
+          <img src="${plumber}" alt="" />
+        </div>
       </div>
     </div>`,
   },
@@ -153,15 +190,17 @@ const ads = [
     w: 1080,
     h: 1920,
     body: `
-    <div class="ad">
+    <div class="ad" style="display: grid; grid-template-rows: auto auto minmax(0, 1fr);">
       <div class="bar" style="padding: 18px 40px; font-size: 20px;">Portobello Plumbing Co</div>
-      <div style="padding: 48px 48px 0;">
+      <div style="padding: 40px 48px 12px;">
         <p class="eyebrow" style="font-size: 22px;">Mt Albert · Auckland</p>
-        <h1 style="margin-top: 20px; font-size: 128px;">Great<br>plumbing.<br><em>No dramas.</em></h1>
-        <p class="sub" style="margin-top: 28px; font-size: 32px;">Licensed plumber. Clear communication. Tidy work.</p>
-        <div class="cta" style="margin-top: 36px; padding: 22px 40px; font-size: 30px;">Call 027 549 9090</div>
+        <h1 style="margin-top: 18px; font-size: 110px;">Great<br>plumbing.<br><em>No dramas.</em></h1>
+        <p class="sub" style="margin-top: 22px; font-size: 28px;">Licensed plumber. Clear communication. Tidy work.</p>
+        <div class="cta" style="margin-top: 28px; padding: 20px 36px; font-size: 26px;">Call 027 549 9090</div>
       </div>
-      <img class="plumber" src="${plumber}" alt="" style="position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); height: 46%;" />
+      <div class="mascot-box" style="padding-bottom: 4%;">
+        <img src="${plumber}" alt="" />
+      </div>
     </div>`,
   },
   {
@@ -169,15 +208,19 @@ const ads = [
     w: 1080,
     h: 1080,
     body: `
-    <div class="ad">
+    <div class="ad" style="display: grid; grid-template-rows: auto minmax(0, 1fr);">
       <div class="bar" style="padding: 14px 36px; font-size: 18px;">Hot water · Auckland</div>
-      <div style="padding: 40px 48px;">
-        <img class="logo" src="${logo}" alt="" style="width: 360px;" />
-        <p class="eyebrow" style="margin-top: 48px; font-size: 20px;">Cylinder repair and replace</p>
-        <h1 style="margin-top: 16px; font-size: 108px;">No hot water?<br><em>We can sort it.</em></h1>
-        <p class="sub" style="margin-top: 24px; font-size: 30px;">Repairs, replacements and new installs sized for your house.</p>
-        <div class="cta" style="margin-top: 36px; padding: 18px 36px; font-size: 26px;">Call 027 549 9090</div>
-        <p class="foot" style="margin-top: 28px; font-size: 20px;">portobelloplumbing.co.nz</p>
+      <div class="split" style="grid-template-columns: 1.05fr 0.95fr;">
+        <div style="padding: 32px 24px 36px 44px;">
+          <img class="logo" src="${logo}" alt="" style="width: 320px;" />
+          <p class="eyebrow" style="margin-top: 32px; font-size: 18px;">Cylinder repair and replace</p>
+          <h1 style="margin-top: 14px; font-size: 78px;">No hot water?<br><em>We can sort it.</em></h1>
+          <p class="sub" style="margin-top: 16px; font-size: 24px;">Repairs, replacements and new installs sized for your house.</p>
+          <div class="cta" style="margin-top: 24px; padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+        </div>
+        <div class="mascot-box">
+          <img src="${plumber}" alt="" />
+        </div>
       </div>
     </div>`,
   },
@@ -186,14 +229,19 @@ const ads = [
     w: 1080,
     h: 1080,
     body: `
-    <div class="ad" style="background: #e8f8f9;">
+    <div class="ad" style="background: #e8f8f9; display: grid; grid-template-rows: auto minmax(0, 1fr);">
       <div class="bar" style="padding: 14px 36px; font-size: 18px; background: var(--teal);">Blocked drains</div>
-      <div style="padding: 40px 48px;">
-        <img class="logo" src="${logo}" alt="" style="width: 360px;" />
-        <p class="eyebrow" style="margin-top: 48px; font-size: 20px;">Fast diagnosis</p>
-        <h1 style="margin-top: 16px; font-size: 104px;">Drains blocked?<br><em>Get it flowing.</em></h1>
-        <p class="sub" style="margin-top: 24px; font-size: 30px;">Practical drainage solutions without the runaround.</p>
-        <div class="cta" style="margin-top: 36px; padding: 18px 36px; font-size: 26px;">Call 027 549 9090</div>
+      <div class="split" style="grid-template-columns: 1.05fr 0.95fr;">
+        <div style="padding: 32px 24px 36px 44px;">
+          <img class="logo" src="${logo}" alt="" style="width: 320px;" />
+          <p class="eyebrow" style="margin-top: 32px; font-size: 18px;">Fast diagnosis</p>
+          <h1 style="margin-top: 14px; font-size: 78px;">Drains blocked?<br><em>Get it flowing.</em></h1>
+          <p class="sub" style="margin-top: 16px; font-size: 24px;">Practical drainage solutions without the runaround.</p>
+          <div class="cta" style="margin-top: 24px; padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+        </div>
+        <div class="mascot-box">
+          <img src="${plumber}" alt="" />
+        </div>
       </div>
     </div>`,
   },
@@ -202,25 +250,28 @@ const ads = [
     w: 1200,
     h: 628,
     body: `
-    <div class="ad">
+    <div class="ad" style="display: grid; grid-template-rows: auto minmax(0, 1fr);">
       <div class="bar" style="padding: 10px 32px; font-size: 14px;">Clear pricing · No surprises</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding: 36px 40px; height: calc(100% - 38px); align-items: center;">
-        <div>
-          <img class="logo" src="${logo}" alt="" style="width: 280px;" />
-          <h1 style="margin-top: 20px; font-size: 58px;">Straight-up<br><em>pricing.</em></h1>
-          <div class="cta" style="margin-top: 20px; padding: 12px 24px; font-size: 18px;">Call 027 549 9090</div>
+      <div class="split" style="grid-template-columns: 0.85fr 1.05fr 0.85fr; gap: 12px; padding: 20px 24px;">
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+          <img class="logo" src="${logo}" alt="" style="width: 240px;" />
+          <h1 style="margin-top: 16px; font-size: 48px;">Straight-up<br><em>pricing.</em></h1>
+          <div class="cta" style="margin-top: 16px; padding: 10px 20px; font-size: 16px;">Call 027 549 9090</div>
         </div>
-        <div style="display: grid; gap: 16px;">
-          <div style="padding: 22px 26px; border: 3px solid var(--ink); background: #fff; box-shadow: 6px 6px 0 var(--orange);">
-            <p class="eyebrow" style="font-size: 14px;">Call-out</p>
-            <p style="margin: 8px 0 0; font-family: 'Barlow Condensed', sans-serif; font-size: 64px; font-weight: 800; line-height: 0.9;">$130 <span style="font-size: 28px; color: var(--muted);">+ GST</span></p>
-            <p class="sub" style="margin-top: 8px; font-size: 16px;">Drive plus first 30 minutes on site.</p>
+        <div style="display: grid; gap: 12px; align-content: center;">
+          <div style="padding: 16px 20px; border: 3px solid var(--ink); background: #fff; box-shadow: 6px 6px 0 var(--orange);">
+            <p class="eyebrow" style="font-size: 13px;">Call-out</p>
+            <p style="margin: 6px 0 0; font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 800; line-height: 0.9;">$130 <span style="font-size: 22px; color: var(--muted);">+ GST</span></p>
+            <p class="sub" style="margin-top: 6px; font-size: 14px;">Drive plus first 30 minutes on site.</p>
           </div>
-          <div style="padding: 22px 26px; border: 3px solid var(--ink); background: #fff;">
-            <p class="eyebrow" style="font-size: 14px;">After that</p>
-            <p style="margin: 8px 0 0; font-family: 'Barlow Condensed', sans-serif; font-size: 64px; font-weight: 800; line-height: 0.9;">$100 <span style="font-size: 28px; color: var(--muted);">+ GST / hr</span></p>
-            <p class="sub" style="margin-top: 8px; font-size: 16px;">Billed every 15 minutes.</p>
+          <div style="padding: 16px 20px; border: 3px solid var(--ink); background: #fff;">
+            <p class="eyebrow" style="font-size: 13px;">After that</p>
+            <p style="margin: 6px 0 0; font-family: 'Barlow Condensed', sans-serif; font-size: 52px; font-weight: 800; line-height: 0.9;">$100 <span style="font-size: 22px; color: var(--muted);">+ GST / hr</span></p>
+            <p class="sub" style="margin-top: 6px; font-size: 14px;">Billed every 15 minutes.</p>
           </div>
+        </div>
+        <div class="mascot-box" style="padding: 0 4px 8px;">
+          <img src="${plumber}" alt="" />
         </div>
       </div>
     </div>`,
@@ -246,13 +297,18 @@ const ads = [
     w: 1200,
     h: 628,
     body: `
-    <div class="ad">
+    <div class="ad" style="display: grid; grid-template-rows: auto minmax(0, 1fr);">
       <div class="bar" style="padding: 10px 32px; font-size: 14px;">Grey Lynn · Ponsonby · Mt Eden · Mt Albert and around</div>
-      <div style="padding: 36px 44px;">
-        <img class="logo" src="${logo}" alt="" style="width: 300px;" />
-        <h1 style="margin-top: 24px; font-size: 78px; max-width: 12ch;">Your local<br><em>Auckland plumber.</em></h1>
-        <p class="sub" style="margin-top: 16px; font-size: 24px;">Based in Mt Albert. Covering Central and West.</p>
-        <div class="cta" style="margin-top: 22px; padding: 14px 28px; font-size: 20px;">Call 027 549 9090</div>
+      <div class="split" style="grid-template-columns: 1.15fr 0.85fr;">
+        <div style="padding: 28px 24px 28px 44px;">
+          <img class="logo" src="${logo}" alt="" style="width: 280px;" />
+          <h1 style="margin-top: 18px; font-size: 64px;">Your local<br><em>Auckland plumber.</em></h1>
+          <p class="sub" style="margin-top: 12px; font-size: 22px;">Based in Mt Albert. Covering Central and West.</p>
+          <div class="cta" style="margin-top: 18px; padding: 12px 24px; font-size: 18px;">Call 027 549 9090</div>
+        </div>
+        <div class="mascot-box">
+          <img src="${plumber}" alt="" />
+        </div>
       </div>
     </div>`,
   },
@@ -261,14 +317,19 @@ const ads = [
     w: 1080,
     h: 1080,
     body: `
-    <div class="ad">
+    <div class="ad" style="display: grid; grid-template-rows: auto minmax(0, 1fr);">
       <div class="bar" style="padding: 14px 36px; font-size: 18px;">Before you buy</div>
-      <div style="padding: 44px 48px;">
-        <img class="logo" src="${logo}" alt="" style="width: 360px;" />
-        <p class="eyebrow" style="margin-top: 52px; font-size: 20px;">Pre-purchase inspections</p>
-        <h1 style="margin-top: 16px; font-size: 96px;">Know the plumbing<br><em>before you commit.</em></h1>
-        <p class="sub" style="margin-top: 24px; font-size: 28px;">A clear report on condition, from a licensed plumber.</p>
-        <div class="cta" style="margin-top: 36px; padding: 18px 36px; font-size: 26px;">Call 027 549 9090</div>
+      <div class="split" style="grid-template-columns: 1.05fr 0.95fr;">
+        <div style="padding: 32px 24px 36px 44px;">
+          <img class="logo" src="${logo}" alt="" style="width: 320px;" />
+          <p class="eyebrow" style="margin-top: 32px; font-size: 18px;">Pre-purchase inspections</p>
+          <h1 style="margin-top: 14px; font-size: 72px;">Know the plumbing<br><em>before you commit.</em></h1>
+          <p class="sub" style="margin-top: 16px; font-size: 24px;">A clear report on condition, from a licensed plumber.</p>
+          <div class="cta" style="margin-top: 24px; padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
+        </div>
+        <div class="mascot-box">
+          <img src="${plumber}" alt="" />
+        </div>
       </div>
     </div>`,
   },
@@ -277,10 +338,15 @@ const ads = [
     w: 300,
     h: 250,
     body: `
-    <div class="ad" style="padding: 12px 14px 14px; display: flex; flex-direction: column;">
-      <img class="logo" src="${logo}" alt="" style="width: 168px;" />
-      <h1 style="margin-top: 10px; font-size: 34px;">Great plumbing.<br><em>No dramas.</em></h1>
-      <div class="cta" style="margin-top: auto; padding: 8px 12px; font-size: 13px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
+    <div class="ad split" style="grid-template-columns: 1.1fr 0.9fr; padding: 10px 8px 10px 12px;">
+      <div style="display: flex; flex-direction: column; min-width: 0;">
+        <img class="logo" src="${logo}" alt="" style="width: 140px;" />
+        <h1 style="margin-top: 8px; font-size: 26px;">Great plumbing.<br><em>No dramas.</em></h1>
+        <div class="cta" style="margin-top: auto; padding: 7px 10px; font-size: 11px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
+      </div>
+      <div class="mascot-box" style="padding: 0 2px 2px;">
+        <img src="${plumber}" alt="" />
+      </div>
     </div>`,
   },
   {
@@ -288,15 +354,17 @@ const ads = [
     w: 300,
     h: 600,
     body: `
-    <div class="ad" style="display: flex; flex-direction: column; height: 100%;">
+    <div class="ad" style="display: grid; grid-template-rows: auto auto minmax(0, 1fr); height: 100%;">
       <div class="bar" style="padding: 8px 12px; font-size: 11px;">Auckland plumber</div>
-      <div style="padding: 16px 16px 0; flex: 1;">
-        <img class="logo" src="${logo}" alt="" style="width: 200px;" />
-        <h1 style="margin-top: 18px; font-size: 42px;">Great plumbing.<br><em>No dramas.</em></h1>
-        <p class="sub" style="margin-top: 12px; font-size: 15px;">Hot water, drains, repairs. Mt Albert based.</p>
-        <div class="cta" style="margin-top: 16px; padding: 10px 14px; font-size: 14px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
+      <div style="padding: 14px 16px 8px;">
+        <img class="logo" src="${logo}" alt="" style="width: 180px;" />
+        <h1 style="margin-top: 12px; font-size: 36px;">Great plumbing.<br><em>No dramas.</em></h1>
+        <p class="sub" style="margin-top: 10px; font-size: 14px;">Hot water, drains, repairs. Mt Albert based.</p>
+        <div class="cta" style="margin-top: 12px; padding: 9px 12px; font-size: 13px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
       </div>
-      <img class="plumber" src="${plumber}" alt="" style="height: 210px; width: 100%;" />
+      <div class="mascot-box">
+        <img src="${plumber}" alt="" />
+      </div>
     </div>`,
   },
   {
@@ -304,10 +372,13 @@ const ads = [
     w: 728,
     h: 90,
     body: `
-    <div class="ad" style="display: flex; align-items: center; gap: 16px; padding: 0 14px;">
-      <img class="logo" src="${logo}" alt="" style="width: 168px; flex-shrink: 0;" />
-      <h1 style="font-size: 28px; flex: 1;">Great plumbing. <em>No dramas.</em></h1>
-      <div class="cta" style="padding: 8px 14px; font-size: 13px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
+    <div class="ad" style="display: flex; align-items: center; gap: 12px; padding: 6px 12px;">
+      <img class="logo" src="${logo}" alt="" style="width: 148px; flex-shrink: 0;" />
+      <h1 style="font-size: 24px; flex: 1;">Great plumbing. <em>No dramas.</em></h1>
+      <div class="mascot-box" style="height: 78px; width: 70px; padding: 0; flex-shrink: 0;">
+        <img src="${plumber}" alt="" />
+      </div>
+      <div class="cta" style="padding: 8px 12px; font-size: 12px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
     </div>`,
   },
 ];
