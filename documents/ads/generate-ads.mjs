@@ -110,7 +110,10 @@ function page({ w, h, body }) {
       background: #ddd;
     }
     .mascot-box {
-      background: url("${plumber}") no-repeat center bottom / contain;
+      background-image: url("${plumber}");
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: contain;
       background-origin: content-box;
       background-clip: content-box;
       overflow: hidden;
@@ -119,7 +122,7 @@ function page({ w, h, body }) {
       height: 100%;
       width: 100%;
       align-self: stretch;
-      padding: 10px 14px 12px;
+      padding: 18px 32px 20px 24px;
     }
     .split {
       display: grid;
