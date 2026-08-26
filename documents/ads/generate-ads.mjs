@@ -110,27 +110,16 @@ function page({ w, h, body }) {
       background: #ddd;
     }
     .mascot-box {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
+      background: url("${plumber}") no-repeat center bottom / contain;
+      background-origin: content-box;
+      background-clip: content-box;
       overflow: hidden;
-      padding: 6% 8% 4%;
       min-width: 0;
       min-height: 0;
       height: 100%;
+      width: 100%;
       align-self: stretch;
-    }
-    .mascot-box img {
-      display: block;
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: 100%;
-      min-width: 0;
-      min-height: 0;
-      object-fit: contain;
-      object-position: center bottom;
-      flex: 0 1 auto;
+      padding: 10px 14px 12px;
     }
     .split {
       display: grid;
@@ -160,9 +149,7 @@ const ads = [
           <p class="sub" style="margin-top: 18px; font-size: 24px; max-width: 24ch;">Repairs, hot water, drains and renovations. Straight-up service from Mt Albert.</p>
           <div class="cta" style="margin-top: 24px; padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
         </div>
-        <div class="mascot-box">
-          <img src="${plumber}" alt="" />
-        </div>
+        <div class="mascot-box"></div>
       </div>
     </div>`,
   },
@@ -179,9 +166,7 @@ const ads = [
           <h1 style="margin-top: 18px; font-size: 64px;">Great plumbing.<br><em>No dramas.</em></h1>
           <div class="cta" style="margin-top: 18px; padding: 12px 24px; font-size: 18px;">Call 027 549 9090</div>
         </div>
-        <div class="mascot-box">
-          <img src="${plumber}" alt="" />
-        </div>
+        <div class="mascot-box"></div>
       </div>
     </div>`,
   },
@@ -198,9 +183,7 @@ const ads = [
         <p class="sub" style="margin-top: 22px; font-size: 28px;">Licensed plumber. Clear communication. Tidy work.</p>
         <div class="cta" style="margin-top: 28px; padding: 20px 36px; font-size: 26px;">Call 027 549 9090</div>
       </div>
-      <div class="mascot-box" style="padding-bottom: 4%;">
-        <img src="${plumber}" alt="" />
-      </div>
+      <div class="mascot-box"></div>
     </div>`,
   },
   {
@@ -218,9 +201,7 @@ const ads = [
           <p class="sub" style="margin-top: 16px; font-size: 24px;">Repairs, replacements and new installs sized for your house.</p>
           <div class="cta" style="margin-top: 24px; padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
         </div>
-        <div class="mascot-box">
-          <img src="${plumber}" alt="" />
-        </div>
+        <div class="mascot-box"></div>
       </div>
     </div>`,
   },
@@ -239,9 +220,7 @@ const ads = [
           <p class="sub" style="margin-top: 16px; font-size: 24px;">Practical drainage solutions without the runaround.</p>
           <div class="cta" style="margin-top: 24px; padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
         </div>
-        <div class="mascot-box">
-          <img src="${plumber}" alt="" />
-        </div>
+        <div class="mascot-box"></div>
       </div>
     </div>`,
   },
@@ -270,9 +249,7 @@ const ads = [
             <p class="sub" style="margin-top: 6px; font-size: 14px;">Billed every 15 minutes.</p>
           </div>
         </div>
-        <div class="mascot-box" style="padding: 0 4px 8px;">
-          <img src="${plumber}" alt="" />
-        </div>
+        <div class="mascot-box"></div>
       </div>
     </div>`,
   },
@@ -306,9 +283,7 @@ const ads = [
           <p class="sub" style="margin-top: 12px; font-size: 22px;">Based in Mt Albert. Covering Central and West.</p>
           <div class="cta" style="margin-top: 18px; padding: 12px 24px; font-size: 18px;">Call 027 549 9090</div>
         </div>
-        <div class="mascot-box">
-          <img src="${plumber}" alt="" />
-        </div>
+        <div class="mascot-box"></div>
       </div>
     </div>`,
   },
@@ -327,9 +302,7 @@ const ads = [
           <p class="sub" style="margin-top: 16px; font-size: 24px;">A clear report on condition, from a licensed plumber.</p>
           <div class="cta" style="margin-top: 24px; padding: 16px 30px; font-size: 22px;">Call 027 549 9090</div>
         </div>
-        <div class="mascot-box">
-          <img src="${plumber}" alt="" />
-        </div>
+        <div class="mascot-box"></div>
       </div>
     </div>`,
   },
@@ -344,9 +317,7 @@ const ads = [
         <h1 style="margin-top: 8px; font-size: 26px;">Great plumbing.<br><em>No dramas.</em></h1>
         <div class="cta" style="margin-top: auto; padding: 7px 10px; font-size: 11px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
       </div>
-      <div class="mascot-box" style="padding: 0 2px 2px;">
-        <img src="${plumber}" alt="" />
-      </div>
+      <div class="mascot-box"></div>
     </div>`,
   },
   {
@@ -362,9 +333,7 @@ const ads = [
         <p class="sub" style="margin-top: 10px; font-size: 14px;">Hot water, drains, repairs. Mt Albert based.</p>
         <div class="cta" style="margin-top: 12px; padding: 9px 12px; font-size: 13px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
       </div>
-      <div class="mascot-box">
-        <img src="${plumber}" alt="" />
-      </div>
+      <div class="mascot-box"></div>
     </div>`,
   },
   {
@@ -375,9 +344,7 @@ const ads = [
     <div class="ad" style="display: flex; align-items: center; gap: 12px; padding: 6px 12px;">
       <img class="logo" src="${logo}" alt="" style="width: 148px; flex-shrink: 0;" />
       <h1 style="font-size: 24px; flex: 1;">Great plumbing. <em>No dramas.</em></h1>
-      <div class="mascot-box" style="height: 78px; width: 70px; padding: 0; flex-shrink: 0;">
-        <img src="${plumber}" alt="" />
-      </div>
+      <div class="mascot-box" style="height: 78px; width: 86px; flex-shrink: 0;"></div>
       <div class="cta" style="padding: 8px 12px; font-size: 12px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
     </div>`,
   },
