@@ -392,7 +392,7 @@ const ads = [
     h: 90,
     body: `
     <div class="ad" style="display: flex; align-items: center; gap: 14px; padding: 8px 14px;">
-      <img class="logo" src="${logoWordmark}" alt="" style="width: 168px; flex-shrink: 0;" />
+      <img class="logo" src="${logoWordmark}" alt="" style="height: 72px; width: auto; flex-shrink: 0;" />
       <h1 style="font-size: 22px; flex: 1; line-height: 0.9;">Great plumbing.<br><em>No dramas.</em></h1>
       <div class="cta-col" style="align-items: flex-end; flex-shrink: 0;">
         <div class="cta" style="padding: 8px 14px; font-size: 13px; box-shadow: 3px 3px 0 var(--ink); border-width: 2px;">Call 027 549 9090</div>
